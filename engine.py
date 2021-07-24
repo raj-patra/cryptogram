@@ -17,9 +17,59 @@ class Cypher:
         Available Engines:
 
         Reverse Cypher
-            About - Encryption and Decryption includes reversing the message.
+            About - Procedure includes reversing the message.
             Strength - Low
             Key - No key required for encryption or decryption
+
+        Caeser Cypher
+            About - Procedure includes shifting the dictionary.
+            Strength - Low
+            Key - <int> type key required for encryption or decryption
+
+        Shifting Caeser Cypher
+            About - Procedure includes shifting the dictionary continously.
+            Strength - Moderate
+            Key - <int> type key required for encryption or decryption
+
+        ROT13 Cypher
+            About - Procedure includes shifting the dictionary by a value of 13.
+            Strength - Low
+            Key - No key required for encryption or decryption
+
+        Transposition Cypher
+            About - Procedure includes arranging the message row-wise, in a matrix and extracting column-wise.
+            Strength - Moderate
+            Key - <int> type key required for encryption or decryption
+
+        Base64 Cypher
+            About - Procedure includes standard text-to-binary encoding scheme.
+            Strength - Low
+            Key - No key required for encryption or decryption
+        
+        Xor Cypher
+            About - Procedure includes applying xor operator on message and key.
+            Strength - High
+            Key - <str> type key required for encryption or decryption
+
+        Multiplicative Cypher
+            About - Procedure includes modifying caeser cypher with multiplication operator.
+            Strength - High
+            Key - <bigint> type key required for encryption or decryption
+
+        Monoalphabetic Cypher
+            About - Procedure includes replacing original symbols with random symbols from key.
+            Strength - High
+            Key - Key generated automatically for encryption or decryption. 
+
+        Fernet Cypher
+            About - Procedure includes symmetric cryptographic schemes.
+            Strength - High
+            Key - Key generated automatically for encryption or decryption.
+
+        OneTimePad Cypher
+            About - Procedure includes modifying xor cypher with base64 encoding scheme.
+            Strength - High
+            Key - <str> type key required for encryption or decryption
         """
 
 
