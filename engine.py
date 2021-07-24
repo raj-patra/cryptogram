@@ -20,12 +20,12 @@ class Cypher:
             Strength - Low
             Key - No key required for encryption or decryption
 
-        Caeser Cypher
+        caesar Cypher
             About - Procedure includes shifting the dictionary.
             Strength - Low
             Key - <int> type key required for encryption or decryption
 
-        Shifting Caeser Cypher
+        Shifting caesar Cypher
             About - Procedure includes shifting the dictionary continously.
             Strength - Moderate
             Key - <int> type key required for encryption or decryption
@@ -51,7 +51,7 @@ class Cypher:
             Key - <str> type key required for encryption or decryption
 
         Multiplicative Cypher
-            About - Procedure includes modifying caeser cypher with multiplication operator.
+            About - Procedure includes modifying caesar cypher with multiplication operator.
             Strength - High
             Key - <bigint> type key required for encryption or decryption
 
@@ -122,7 +122,7 @@ class Cypher:
 
         return message[::-1], key
 
-    def caeser(self, message: str, encrypt=False, decrypt=False, key=None):
+    def caesar(self, message: str, encrypt=False, decrypt=False, key=None):
         """Procedure includes shifting the dictionary.
 
         Args:
@@ -149,7 +149,7 @@ class Cypher:
             decrypted_data = ''.join([self.__symbols__[rotated_symbols.index(sym)] for sym in message])
             return decrypted_data, int(key)
     
-    def shifting_caeser(self, message: str, encrypt=False, decrypt=False, key=None):
+    def shifting_caesar(self, message: str, encrypt=False, decrypt=False, key=None):
         """Procedure includes shifting the dictionary continously.
 
         Args:
@@ -288,7 +288,7 @@ class Cypher:
             return decrypted_data, key
     
     def multiplicative(self, message: str, encrypt=False, decrypt=False, key=None):
-        """About - Procedure includes modifying caeser cypher with multiplication operation.
+        """About - Procedure includes modifying caesar cypher with multiplication operation.
 
         Args:
             message (str): message to be encrypted/decrypted.
