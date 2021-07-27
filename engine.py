@@ -1,4 +1,5 @@
-import string, random, math, base64, binascii, warnings
+# Imports
+import base64, binascii, math, random, string, warnings
 
 from cryptography.fernet import Fernet
 from collections import deque
@@ -20,7 +21,7 @@ class Cypher:
             Strength - Low
             Key - No key required for encryption or decryption
 
-        caesar Cypher
+        Caesar Cypher
             About - Procedure includes shifting the dictionary.
             Strength - Low
             Key - <int> type key required for encryption or decryption
