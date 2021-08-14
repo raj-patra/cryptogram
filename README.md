@@ -13,6 +13,7 @@ Cryptography engine with all the popular encrypting algorithms.
 * [Monoalphabetic Cypher](https://en.wikipedia.org/wiki/Substitution_cipher)
 * [Fernet Cypher](https://en.wikipedia.org/wiki/Symmetric-key_algorithm)
 * [Onetimepad Cypher](https://en.wikipedia.org/wiki/One-time_pad)
+* [RSA Cypher](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
 
 ### Clone and setup
 ```

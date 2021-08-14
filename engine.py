@@ -442,3 +442,20 @@ class Cypher:
             decrypted_data = rsa.decrypt(message, key).decode('utf-8')
 
             return decrypted_data, key
+
+    def pseudo_random(self, message: str, encrypt=False, decrypt=False, key=None):
+
+        if type(key) not in [int, float]:
+            warnings.warn("int based key is preferred for ceaser cypher. Assuming random key.")
+            key = random.randint(1, 10000)
+
+        shuffled_symbols = self.__symbols__.copy()
+        random.Random(key).shuffle(shuffled_symbols)
+
+        if encrypt:                
+            encrypted_data = ''.join([shuffled_symbols[self.__symbols__.index(sym)] for sym in message])
+            return encrypted_data, int(key)
+
+        if decrypt:
+            decrypted_data = ''.join([self.__symbols__[shuffled_symbols.index(sym)] for sym in message])
+            return decrypted_data, int(key)
