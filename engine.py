@@ -76,6 +76,11 @@ class Cypher:
             Strength - High
             Key - Key generated automatically for encryption or decryption.
 
+        Pseudo Random Cypher
+            About - Procedure includes shuffling the dictionary.
+            Strength - High
+            Key - <int> type key required for encryption or decryption
+
         Note - Key provided/generated during encryption should be used for a successful decryption.
         """
 
