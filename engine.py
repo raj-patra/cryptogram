@@ -475,4 +475,27 @@ class Cypher:
             decrypted_data = ''.join([self.__symbols__[shuffled_symbols.index(sym)] for sym in message])
             return decrypted_data, int(key)
 
-    
+    def vignere(self, message: str, encrypt=False, decrypt=False, key=None):
+
+        if type(key) not in [int, float]:
+            warnings.warn("int based key is preferred for vignere cypher. Assuming random key.")
+            key = random.randint(1, 10000)
+
+        random_symbols = ''.join(random.Random(key).sample(self.__symbols__, k=len(message)))
+
+        if encrypt:
+            encrypted_data = ''
+            for i in range(len(message)) :
+                index = (self.__symbols__.index(message[i]) + self.__symbols__.index(random_symbols[i])) % len(self.__symbols__)
+                encrypted_data += self.__symbols__[index]
+
+            return encrypted_data, int(key)
+
+        if decrypt:
+            decrypted_data = ''
+            for i in range(len(message)) :
+                index = (self.__symbols__.index(message[i]) - self.__symbols__.index(random_symbols[i])) % len(self.__symbols__)
+                decrypted_data += self.__symbols__[index]
+
+            return decrypted_data, int(key)
+
