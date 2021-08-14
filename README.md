@@ -3,18 +3,18 @@ Cryptography engine with all the popular encrypting algorithms.
 
 ### Available engines
 * [Symbol Reversal](http://www.google.com?query=how%20to%20reverse%20string)
-* [Caeser Cypher](https://en.wikipedia.org/wiki/Caesar_cipher)
-* [Shifting Caesar Cypher](https://en.wikipedia.org/wiki/Caesar_cipher)
-* [ROT13 Cypher](https://en.wikipedia.org/wiki/ROT13)
-* [Transposition Cypher](https://en.wikipedia.org/wiki/Transposition_cipher)
-* [Base64 Cypher](https://en.wikipedia.org/wiki/Base64)
-* [Xor Cypher](https://en.wikipedia.org/wiki/XOR_cipher)
-* [Multiplicative Cypher](https://www.tutorialspoint.com/cryptography_with_python/cryptography_with_python_multiplicative_cipher.htm)
-* [Monoalphabetic Cypher](https://en.wikipedia.org/wiki/Substitution_cipher)
-* [Fernet Cypher](https://en.wikipedia.org/wiki/Symmetric-key_algorithm)
-* [Onetimepad Cypher](https://en.wikipedia.org/wiki/One-time_pad)
-* [RSA Cypher](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
-* [Pseudo Random Cypher](http://www.google.com?query=how%20to%20shuffle%20list%20python)
+* [Caeser](https://en.wikipedia.org/wiki/Caesar_cipher)
+* [Shifting Caesar](https://en.wikipedia.org/wiki/Caesar_cipher)
+* [ROT13](https://en.wikipedia.org/wiki/ROT13)
+* [Transposition](https://en.wikipedia.org/wiki/Transposition_cipher)
+* [Base64](https://en.wikipedia.org/wiki/Base64)
+* [Xor](https://en.wikipedia.org/wiki/XOR_cipher)
+* [Multiplicative](https://www.tutorialspoint.com/cryptography_with_python/cryptography_with_python_multiplicative_cipher.htm)
+* [Monoalphabetic](https://en.wikipedia.org/wiki/Substitution_cipher)
+* [Fernet](https://en.wikipedia.org/wiki/Symmetric-key_algorithm)
+* [Onetimepad](https://en.wikipedia.org/wiki/One-time_pad)
+* [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
+* [Pseudo Random](http://www.google.com?query=how%20to%20shuffle%20list%20python)
 
 ### Clone and setup
 ```
