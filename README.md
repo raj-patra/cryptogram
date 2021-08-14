@@ -15,6 +15,7 @@ Cryptography engine with all the popular encrypting algorithms.
 * [Onetimepad](https://en.wikipedia.org/wiki/One-time_pad)
 * [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
 * [Pseudo Random](http://www.google.com?query=how%20to%20shuffle%20list%20python)
+* [Vigenere](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher)
 
 ### Clone and setup
 ```

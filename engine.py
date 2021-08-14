@@ -80,6 +80,11 @@ class Cypher:
             About - Procedure includes shuffling the dictionary.
             Strength - High
             Key - <int> type key required for encryption or decryption
+        
+        Vigenere Cypher
+            About - Procedure includes encrypting alphabetic text by using a random sample genrated from a seed.
+            Strength - High
+            Key - <int> type key required for encryption or decryption
 
         Note - Key provided/generated during encryption should be used for a successful decryption.
         """
@@ -475,10 +480,20 @@ class Cypher:
             decrypted_data = ''.join([self.__symbols__[shuffled_symbols.index(sym)] for sym in message])
             return decrypted_data, int(key)
 
-    def vignere(self, message: str, encrypt=False, decrypt=False, key=None):
+    def vigenere(self, message: str, encrypt=False, decrypt=False, key=None):
+        """Procedure includes encrypting alphabetic text by using a random sample genrated from a seed.
 
+        Args:
+            message (str): message to be encrypted/decrypted.
+            encrypt (bool, optional): Mode of operation. Defaults to False.
+            decrypt (bool, optional): Mode of operation. Defaults to False.
+            key (int): <int> type key required for encryption or decryption. Defaults to randint(1, 10000).
+
+        Returns:
+            tuple: encrypted/decrypted data , key
+        """
         if type(key) not in [int, float]:
-            warnings.warn("int based key is preferred for vignere cypher. Assuming random key.")
+            warnings.warn("int based key is preferred for vigenere cypher. Assuming random key.")
             key = random.randint(1, 10000)
 
         random_symbols = ''.join(random.Random(key).sample(self.__symbols__, k=len(message)))
