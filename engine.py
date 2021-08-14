@@ -1,5 +1,5 @@
 # Imports
-import base64, binascii, math, random, string, warnings
+import base64, binascii, math, random, string, warnings, rsa
 
 from cryptography.fernet import Fernet
 from collections import deque
@@ -411,3 +411,15 @@ class Cypher:
             decrypted_data = ''.join([chr(ord(x)^ord(y)) for x, y in zip(data, cycle(key))])
             return decrypted_data, key
 
+    def rsa(self, message: str, encrypt=False, decrypt=False, key=None):
+
+        if encrypt:
+            (public_key, private_key) = rsa.newkeys(1024)
+            encrypted_data = rsa.encrypt(message.encode('utf8'), public_key)
+
+            return encrypted_data, private_key
+
+        if decrypt:
+            decrypted_data = rsa.decrypt(message, key).decode('utf8')
+
+            return decrypted_data, key
