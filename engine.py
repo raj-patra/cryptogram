@@ -71,6 +71,11 @@ class Cypher:
             Strength - High
             Key - <str> type key required for encryption or decryption
 
+        RSA Cypher
+            About - RSA (Rivest–Shamir–Adleman) is a public-key cryptosystem that is widely used for secure data transmission.
+            Strength - High
+            Key - Key generated automatically for encryption or decryption.
+
         Note - Key provided/generated during encryption should be used for a successful decryption.
         """
 
@@ -412,7 +417,17 @@ class Cypher:
             return decrypted_data, key
 
     def rsa(self, message: str, encrypt=False, decrypt=False, key=None):
+        """About - RSA (Rivest–Shamir–Adleman) is a public-key cryptosystem that is widely used for secure data transmission.
 
+        Args:
+            message (str): message to be encrypted/decrypted.
+            encrypt (bool, optional): Mode of operation. Defaults to False.
+            decrypt (bool, optional): Mode of operation. Defaults to False.
+            key (Fernet object): Key generated automatically for encryption or decryption.
+
+        Returns:
+            tuple: encrypted/decrypted data , key
+        """
         if encrypt:
             if type(key) == rsa.key.PublicKey:
                 pass
