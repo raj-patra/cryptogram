@@ -414,12 +414,16 @@ class Cypher:
     def rsa(self, message: str, encrypt=False, decrypt=False, key=None):
 
         if encrypt:
-            (public_key, private_key) = rsa.newkeys(1024)
-            encrypted_data = rsa.encrypt(message.encode('utf8'), public_key)
+            if type(key) == rsa.key.PublicKey:
+                pass
+            else:
+                (public_key, private_key) = rsa.newkeys(1024)
+                key = public_key
+            encrypted_data = rsa.encrypt(message.encode('utf-8'), key)
 
             return encrypted_data, private_key
 
         if decrypt:
-            decrypted_data = rsa.decrypt(message, key).decode('utf8')
+            decrypted_data = rsa.decrypt(message, key).decode('utf-8')
 
             return decrypted_data, key
