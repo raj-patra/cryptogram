@@ -14,6 +14,7 @@ Cryptography engine with all the popular encrypting algorithms.
 * [Fernet Cypher](https://en.wikipedia.org/wiki/Symmetric-key_algorithm)
 * [Onetimepad Cypher](https://en.wikipedia.org/wiki/One-time_pad)
 * [RSA Cypher](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
+* [Pseudo Random Cypher](http://www.google.com?query=how%20to%20shuffle%20list%20python)
 
 ### Clone and setup
 ```

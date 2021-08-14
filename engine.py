@@ -444,7 +444,17 @@ class Cypher:
             return decrypted_data, key
 
     def pseudo_random(self, message: str, encrypt=False, decrypt=False, key=None):
+        """Procedure includes shuffling the dictionary with a determined seed.
 
+        Args:
+            message (str): message to be encrypted/decrypted.
+            encrypt (bool, optional): Mode of operation. Defaults to False.
+            decrypt (bool, optional): Mode of operation. Defaults to False.
+            key (int): <int> type key required for encryption or decryption. Defaults to randint(1, 10000).
+
+        Returns:
+            tuple: encrypted/decrypted data , key
+        """
         if type(key) not in [int, float]:
             warnings.warn("int based key is preferred for ceaser cypher. Assuming random key.")
             key = random.randint(1, 10000)
@@ -459,3 +469,5 @@ class Cypher:
         if decrypt:
             decrypted_data = ''.join([self.__symbols__[shuffled_symbols.index(sym)] for sym in message])
             return decrypted_data, int(key)
+
+    
