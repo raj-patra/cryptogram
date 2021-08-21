@@ -86,6 +86,11 @@ class Cypher:
             About - Procedure includes encrypting alphabetic text by using a random sample genrated from a seed.
             Strength - High
             Key - <int> type key required for encryption or decryption
+        
+        Morse Cypher
+            About - Morse code is a encoding procedure that encodes text characters as standardized sequences of two different signal durations.
+            Strength - Low
+            Key - Not required
 
         Note - Key provided/generated during encryption should be used for a successful decryption.
         """
@@ -516,7 +521,17 @@ class Cypher:
             return (decrypted_data, int(key))
 
     def morse(self, message: str, encrypt=False, decrypt=False, key=None):
-        
+        """Morse code is a method used in telecommunication to encode text characters as standardized sequences of two different signal durations, called dots and dashes.
+
+        Args:
+            message (str): message to be encrypted/decrypted.
+            encrypt (bool, optional): Mode of operation. Defaults to False.
+            decrypt (bool, optional): Mode of operation. Defaults to False.
+            key (optional): No key required for Morse Cypher
+
+        Returns:
+            tuple: encrypted/decrypted data , key
+        """
         if encrypt:
             message = message.upper()
             encrypted_data = ''
@@ -549,3 +564,4 @@ class Cypher:
                         citext = ''
         
             return decrypted_data, key
+
