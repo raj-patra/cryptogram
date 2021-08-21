@@ -59,9 +59,12 @@ class Transform:
     def numeric(self, message: str, key=None):
         if key not in ['binary', 'octal', 'decimal', 'hexadecimal']:
             warnings.warn("'numeric' engine supports following keys: {}".format(['binary', 'octal', 'decimal', 'hexadecimal']))
+            exit()
         else:
             transformed_data = ' '.join(format(ord(i), NUMERIC_DICT[key]) for i in message)
             return transformed_data, key
+
+    
 
 class Cypher:
     def __init__(self):
