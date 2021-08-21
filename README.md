@@ -1,8 +1,10 @@
 # Cryptogram
-Cryptography engine with all the popular encrypting algorithms.
+Cryptography engine with all the popular encrypting, encoding and transforming algorithms.
 
-### Available engines
+### Transformation engines
 * [Symbol Reversal](http://www.google.com?query=how%20to%20reverse%20string)
+
+### Encryption engines
 * [Caeser](https://en.wikipedia.org/wiki/Caesar_cipher)
 * [Shifting Caesar](https://en.wikipedia.org/wiki/Caesar_cipher)
 * [ROT13](https://en.wikipedia.org/wiki/ROT13)
@@ -17,6 +19,9 @@ Cryptography engine with all the popular encrypting algorithms.
 * [Pseudo Random](http://www.google.com?query=how%20to%20shuffle%20list%20python)
 * [Vigenere](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher)
 * [Morse](https://en.wikipedia.org/wiki/Morse_code)
+
+### Encoding engines
+* Work in Progress
 
 ### Clone and setup
 ```

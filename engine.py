@@ -26,21 +26,21 @@ class Transform:
     def __engines__(self):
         return [x for x in dir(self) if not x.startswith('__')]
 
-    def transform(self, message='hello world', engine='reverse', from_type= None, to_type=None):
+    def transform(self, message='hello world', engine='reverse', key= None):
         """transforms message attribute with the specified engine
 
         Args:
             message (str, optional): message to be transformed. Defaults to 'hello world'.
             engine (str, optional): engine to be used for transformation. Defaults to 'reverse'.
-            type ([int, float, str], optional): type used for transformation. Defaults to None.
+            key ([int, float, str], optional): key used for transformation. Defaults to None.
 
         Returns:
-           dict: dictionary with transformed message, type and the engine used.
+           dict: dictionary with transformed message, key and the engine used.
         """
-        transformed = eval("self."+engine)(message=message, from_type=from_type, to_type=to_type)
-        return {'transformed_message': transformed[0], 'from_type': transformed[1], 'to_type': transformed[2], 'engine': engine}
+        transformed = eval("self."+engine)(message=message, key=key)
+        return {'transformed_message': transformed[0], 'key': transformed[1], 'engine': engine}
 
-    def reverse(self, message: str, from_type=None, to_type=None):
+    def reverse(self, message: str, key=None):
         """Procedure includes reversing the message.
 
         Args:
@@ -52,9 +52,9 @@ class Transform:
             tuple: encrypted/decrypted data , key
         """
         if type(message) != str:
-            raise TypeError("'str' object required as 'message' attribute for encryption or decryption")
+            raise TypeError("'str' object required as 'message' attribute for symbol reversal")
 
-        return (message[::-1], from_type, to_type)
+        return (message[::-1], key)
 
     
 
