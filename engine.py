@@ -4,6 +4,7 @@ import base64, binascii, math, random, string, warnings, rsa
 from cryptography.fernet import Fernet
 from collections import deque
 from itertools import cycle
+from helpers import *
 
 
 class Cypher:
@@ -514,3 +515,37 @@ class Cypher:
 
             return (decrypted_data, int(key))
 
+    def morse(self, message: str, encrypt=False, decrypt=False, key=None):
+        
+        if encrypt:
+            message = message.upper()
+            encrypted_data = ''
+            for letter in message:
+                if letter != ' ':
+                    try:
+                        encrypted_data += MORSE_CODE_DICT[letter] + ' '
+                    except KeyError as e:
+                        print("Some symbols in the input message doesn't have a morse equivalent.")
+                        exit()
+                else:
+                    encrypted_data += ' '
+        
+            return encrypted_data, key
+
+        if decrypt:
+            message += ' '
+            decrypted_data = ''
+            citext = ''
+            for letter in message:
+                if (letter != ' '):
+                    i = 0
+                    citext += letter
+                else:
+                    i += 1
+                    if i == 2 :
+                        decrypted_data += ' '
+                    else:
+                        decrypted_data += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(citext)]
+                        citext = ''
+        
+            return decrypted_data, key
