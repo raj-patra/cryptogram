@@ -7,6 +7,58 @@ from itertools import cycle
 from helpers import *
 
 
+class Transform:
+    def __init__(self):
+        self.__symbols__ = deque(sorted(string.ascii_letters+string.digits+string.punctuation+' '))
+
+    def __str__(self):
+        return """
+        Cryptogram provides its users with a variety of Transformation Engines to transform their messages
+
+        Available Engines:
+
+        Reverse Transform
+            About - Procedure includes reversing the message.
+            Strength - Low
+            Key - No key required for encryption or decryption
+        """
+
+    def __engines__(self):
+        return [x for x in dir(self) if not x.startswith('__')]
+
+    def transform(self, message='hello world', engine='reverse', from_type= None, to_type=None):
+        """transforms message attribute with the specified engine
+
+        Args:
+            message (str, optional): message to be transformed. Defaults to 'hello world'.
+            engine (str, optional): engine to be used for transformation. Defaults to 'reverse'.
+            type ([int, float, str], optional): type used for transformation. Defaults to None.
+
+        Returns:
+           dict: dictionary with transformed message, type and the engine used.
+        """
+        transformed = eval("self."+engine)(message=message, from_type=from_type, to_type=to_type)
+        return {'transformed_message': transformed[0], 'from_type': transformed[1], 'to_type': transformed[2], 'engine': engine}
+
+    def reverse(self, message: str, from_type=None, to_type=None):
+        """Procedure includes reversing the message.
+
+        Args:
+            message (str): message to be encrypted/decrypted.
+            from_type (None, optional): No key required for transformation. Defaults to None.
+            to_type (None, optional): No key required for transformation. Defaults to None.
+
+        Returns:
+            tuple: encrypted/decrypted data , key
+        """
+        if type(message) != str:
+            raise TypeError("'str' object required as 'message' attribute for encryption or decryption")
+
+        return (message[::-1], from_type, to_type)
+
+    
+
+
 class Cypher:
     def __init__(self):
         self.__symbols__ = deque(sorted(string.ascii_letters+string.digits+string.punctuation+' '))
@@ -16,11 +68,6 @@ class Cypher:
         Cryptogram provides its users with a variety of Cypher Engines to encrypt their messages
 
         Available Engines:
-
-        Reverse Cypher
-            About - Procedure includes reversing the message.
-            Strength - Low
-            Key - No key required for encryption or decryption
 
         Caesar Cypher
             About - Procedure includes shifting the dictionary.
@@ -98,13 +145,13 @@ class Cypher:
     def __engines__(self):
         return [x for x in dir(self) if not x.startswith('__')]
 
-    def encrypt(self, message='hello world', engine='reverse', key=None):
+    def encrypt(self, message='hello world', engine='rot13', key=13):
         """encrypts message attribute with the specified engine
 
         Args:
             message (str, optional): message to be encrypted. Defaults to 'hello world'.
-            engine (str, optional): engine to be used for encryption. Defaults to 'reverse'.
-            key ([int, float, str], optional): key used for encryption. Defaults to None.
+            engine (str, optional): engine to be used for encryption. Defaults to 'rot13'.
+            key ([int, float, str], optional): key used for encryption. Defaults to 13.
 
         Returns:
            dict: dictionary with encrypted message, key and the engine used.
@@ -112,13 +159,13 @@ class Cypher:
         encrypted = eval("self."+engine)(message=message, encrypt=True, decrypt=False, key=key)
         return {'encrypted_message': encrypted[0], 'key': encrypted[1], 'engine': engine}
     
-    def decrypt(self, message='dlrow olleh', engine='reverse', key=None):
+    def decrypt(self, message='uryy|-%| yq', engine='rot13', key=13):
         """decrypts message attribute with the specified engine
 
         Args:
-            message (str, optional): message to be decrypted. Defaults to 'dlrow olleh'.
-            engine (str, optional): engine to be used for decryption. Defaults to 'reverse'.
-            key ([int, float, str], optional): key used for decryption. Defaults to None.
+            message (str, optional): message to be decrypted. Defaults to 'uryy|-%| yq'.
+            engine (str, optional): engine to be used for decryption. Defaults to 'rot13'.
+            key ([int, float, str], optional): key used for decryption. Defaults to 13.
 
         Returns:
            dict: dictionary with decrypted message, key and the engine used.
@@ -126,23 +173,6 @@ class Cypher:
         decrypted = eval("self."+engine)(message=message, encrypt=False, decrypt=True, key=key)
         return {'decrypted_message': decrypted[0], 'key': decrypted[1], 'engine': engine}
 
-
-    def reverse(self, message: str, encrypt=False, decrypt=False, key=None):
-        """Procedure includes reversing the message.
-
-        Args:
-            message (str): message to be encrypted/decrypted.
-            encrypt (bool, optional): Mode of operation. Defaults to False.
-            decrypt (bool, optional): Mode of operation. Defaults to False.
-            key (None, optional): No key required for encryption or decryption. Defaults to None.
-
-        Returns:
-            tuple: encrypted/decrypted data , key
-        """
-        if type(message) != str:
-            raise TypeError("'str' object required as 'message' attribute for encryption or decryption")
-
-        return (message[::-1], key)
 
     def caesar(self, message: str, encrypt=False, decrypt=False, key=None):
         """Procedure includes shifting the dictionary.
