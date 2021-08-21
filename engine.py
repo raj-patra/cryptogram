@@ -52,12 +52,16 @@ class Transform:
             tuple: encrypted/decrypted data , key
         """
         if type(message) != str:
-            raise TypeError("'str' object required as 'message' attribute for symbol reversal")
+            warnings.warn("'str' object required as 'message' attribute for symbol reversal")
 
         return (message[::-1], key)
 
-    
-
+    def numeric(self, message: str, key=None):
+        if key not in ['binary', 'octal', 'decimal', 'hexadecimal']:
+            warnings.warn("'numeric' engine supports following keys: {}".format(['binary', 'octal', 'decimal', 'hexadecimal']))
+        else:
+            transformed_data = ' '.join(format(ord(i), NUMERIC_DICT[key]) for i in message)
+            return transformed_data, key
 
 class Cypher:
     def __init__(self):

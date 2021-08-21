@@ -2,9 +2,13 @@
 Cryptography engine with all the popular encrypting, encoding and transforming algorithms.
 
 ### Transformation engines
+Transformation engines convert the target message from one form/class to another. It doesn't have any
+provision to get back the data once transformed.
 * [Symbol Reversal](http://www.google.com?query=how%20to%20reverse%20string)
 
 ### Encryption engines
+Encryption engines have the provision to encrypt and decrypt a message generally dependent on a key which
+needs to be passed as an argument during encryption and decryprtion.
 * [Caeser](https://en.wikipedia.org/wiki/Caesar_cipher)
 * [Shifting Caesar](https://en.wikipedia.org/wiki/Caesar_cipher)
 * [ROT13](https://en.wikipedia.org/wiki/ROT13)
