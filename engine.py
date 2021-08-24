@@ -45,8 +45,7 @@ class Transform:
 
         Args:
             message (str): message to be encrypted/decrypted.
-            from_type (None, optional): No key required for transformation. Defaults to None.
-            to_type (None, optional): No key required for transformation. Defaults to None.
+            type (None, optional): No key required for transformation. Defaults to None.
 
         Returns:
             tuple: encrypted/decrypted data , key
@@ -56,7 +55,16 @@ class Transform:
 
         return (message[::-1], key)
 
-    def numeric(self, message: str, key=None):
+    def numeric(self, message: str, key="binary"):
+        """Procedure includes transforming the message from strings to a equivalent number system.
+
+        Args:
+            message (str): message to be encrypted/decrypted.
+            type (str, required): Choices available [binary, octal, decimal, hexadecimal]. Defaults to binary.
+
+        Returns:
+            tuple: encrypted/decrypted data , key
+        """
         if key not in ['binary', 'octal', 'decimal', 'hexadecimal']:
             warnings.warn("'numeric' engine supports following keys: {}".format(['binary', 'octal', 'decimal', 'hexadecimal']))
             exit()
