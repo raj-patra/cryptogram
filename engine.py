@@ -72,7 +72,7 @@ class Transform:
         """
         if key not in ['binary', 'octal', 'decimal', 'hexadecimal']:
             warnings.warn("'numeric' engine supports following keys: {}".format(['binary', 'octal', 'decimal', 'hexadecimal']))
-            exit()
+            return "", ""
         else:
             transformed_data = ' '.join(format(ord(i), NUMERIC_DICT[key]) for i in message)
             return transformed_data, key
@@ -590,8 +590,8 @@ class Cypher:
                     try:
                         encrypted_data += MORSE_CODE_DICT[letter] + ' '
                     except KeyError as e:
-                        print("Some symbols in the input message doesn't have a morse equivalent.")
-                        exit()
+                        warnings.warn("Some symbols in the input message doesn't have a morse equivalent.")
+                        return "", ""
                 else:
                     encrypted_data += ' '
         
