@@ -21,6 +21,11 @@ class Transform:
             About - Procedure includes reversing the message.
             Strength - Low
             Key - No key required for encryption or decryption
+        
+        Numeric Transform
+            About - Procedure includes transforming the message from strings to a equivalent number system.
+            Strength - Low
+            Key - Choices available [binary, octal, decimal, hexadecimal]
         """
 
     def __engines__(self):
