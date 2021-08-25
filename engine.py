@@ -94,8 +94,11 @@ class Transform:
                     transformed_data += letter.lower()
                 else:
                     transformed_data += letter.upper()
-
             return transformed_data, key
+        
+        else:
+            warnings.warn("'case' engine supports following keys: {}".format(['upper', 'lower', 'capitalize', 'alternating', 'inverse']))
+            return "", key
             
 
 class Cypher:
