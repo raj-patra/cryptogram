@@ -6,6 +6,7 @@ Transformation engines convert the target message from one form/class to another
 provision to get back the data once transformed.
 * Symbol Reversal
 * Numeric System
+* Case Transform
 
 ### Encryption engines
 Encryption engines have the provision to encrypt and decrypt a message generally dependent on a key which

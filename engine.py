@@ -89,6 +89,10 @@ class Transform:
         Returns:
             tuple: transformed data , key
         """
+        if type(message) != str:
+            warnings.warn("'case' engine can only be applied to str type messages.")
+            return "", key
+            
         if key == 'upper':
             return message.upper(), key
         elif key == 'lower':
