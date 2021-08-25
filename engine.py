@@ -19,13 +19,15 @@ class Transform:
 
         Reverse Transform
             About - Procedure includes reversing the message.
-            Strength - Low
             Key - No key required for encryption or decryption
         
         Numeric Transform
             About - Procedure includes transforming the message from strings to a equivalent number system.
-            Strength - Low
             Key - Choices available [binary, octal, decimal, hexadecimal]
+
+        Case Transform
+            About - Procedure includes transforming the message from one case to another.
+            Key - Choices available [upper, lower, capitalize, alternating, inverse]
         """
 
     def __engines__(self):
@@ -53,7 +55,7 @@ class Transform:
             type (None, optional): No key required for transformation. Defaults to None.
 
         Returns:
-            tuple: encrypted/decrypted data , key
+            tuple: transformed data , key
         """
         if type(message) != str:
             warnings.warn("'str' object required as 'message' attribute for symbol reversal")
@@ -68,7 +70,7 @@ class Transform:
             type (str, required): Choices available [binary, octal, decimal, hexadecimal]. Defaults to binary.
 
         Returns:
-            tuple: encrypted/decrypted data , key
+            tuple: transformed data, key
         """
         if key not in ['binary', 'octal', 'decimal', 'hexadecimal']:
             warnings.warn("'numeric' engine supports following keys: {}".format(['binary', 'octal', 'decimal', 'hexadecimal']))
@@ -78,6 +80,15 @@ class Transform:
             return transformed_data, key
 
     def case(self, message: str, key="capitalize"):
+        """Procedure includes transforming the message from one case to another.
+
+        Args:
+            message (str): message to be encrypted/decrypted.
+            type (str, required): Choices available [upper, lower, capitalize, alternating, inverse]. Defaults to capitalize.
+
+        Returns:
+            tuple: transformed data , key
+        """
         if key == 'upper':
             return message.upper(), key
         elif key == 'lower':
