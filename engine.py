@@ -77,7 +77,26 @@ class Transform:
             transformed_data = ' '.join(format(ord(i), NUMERIC_DICT[key]) for i in message)
             return transformed_data, key
 
-    
+    def case(self, message: str, key="capitalize"):
+        if key == 'upper':
+            return message.upper(), key
+        elif key == 'lower':
+            return message.lower(), key
+        elif key == 'capitalize':
+            return message.capitalize(), key
+        elif key == 'alternating':
+            transformed_data = [ele.upper() if not idx % 2 else ele.lower() for idx, ele in enumerate(message)]
+            return "".join(transformed_data), key
+        elif key == 'inverse':
+            transformed_data = ''
+            for letter in message:
+                if letter.isupper():
+                    transformed_data += letter.lower()
+                else:
+                    transformed_data += letter.upper()
+
+            return transformed_data, key
+            
 
 class Cypher:
     def __init__(self):
