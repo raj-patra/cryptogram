@@ -114,7 +114,53 @@ class Transform:
         else:
             warnings.warn("'case' engine supports following keys: {}".format(['upper', 'lower', 'capitalize', 'alternating', 'inverse']))
             return "", key
-            
+
+    def morse(self, message: str, key=None):
+        """Morse code is a method used in telecommunication to encode text characters as standardized sequences of two different signal durations, called dots and dashes.
+
+        Args:
+            message (str): message to be encrypted/decrypted.
+            key (optional): Mode of operation. Can be one of [encrypt, decrypt]. Defaults to 'encrypt'
+
+        Returns:
+            tuple: encrypted/decrypted data , key
+        """
+        if key == 'encrypt':
+            message = message.upper()
+            transformed_data = ''
+            for letter in message:
+                if letter != ' ':
+                    try:
+                        transformed_data += MORSE_CODE_DICT[letter] + ' '
+                    except KeyError as e:
+                        warnings.warn("Some symbols in the input message doesn't have a morse equivalent.")
+                        return "", ""
+                else:
+                    transformed_data += ' '
+        
+            return transformed_data, key
+
+        elif key == 'decrypt':
+            message += ' '
+            transformed_data = ''
+            citext = ''
+            for letter in message:
+                if (letter != ' '):
+                    i = 0
+                    citext += letter
+                else:
+                    i += 1
+                    if i == 2 :
+                        transformed_data += ' '
+                    else:
+                        transformed_data += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(citext)]
+                        citext = ''
+        
+            return transformed_data, key
+        
+        else:
+            warnings.warn("'morse' engine supports following keys: {}".format(['encrypt', 'decrypt']))
+            return "", key
 
 class Cypher:
     def __init__(self):
@@ -607,48 +653,5 @@ class Cypher:
 
             return (decrypted_data, int(key))
 
-    def morse(self, message: str, encrypt=False, decrypt=False, key=None):
-        """Morse code is a method used in telecommunication to encode text characters as standardized sequences of two different signal durations, called dots and dashes.
-
-        Args:
-            message (str): message to be encrypted/decrypted.
-            encrypt (bool, optional): Mode of operation. Defaults to False.
-            decrypt (bool, optional): Mode of operation. Defaults to False.
-            key (optional): No key required for Morse Cypher
-
-        Returns:
-            tuple: encrypted/decrypted data , key
-        """
-        if encrypt:
-            message = message.upper()
-            encrypted_data = ''
-            for letter in message:
-                if letter != ' ':
-                    try:
-                        encrypted_data += MORSE_CODE_DICT[letter] + ' '
-                    except KeyError as e:
-                        warnings.warn("Some symbols in the input message doesn't have a morse equivalent.")
-                        return "", ""
-                else:
-                    encrypted_data += ' '
-        
-            return encrypted_data, key
-
-        if decrypt:
-            message += ' '
-            decrypted_data = ''
-            citext = ''
-            for letter in message:
-                if (letter != ' '):
-                    i = 0
-                    citext += letter
-                else:
-                    i += 1
-                    if i == 2 :
-                        decrypted_data += ' '
-                    else:
-                        decrypted_data += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(citext)]
-                        citext = ''
-        
-            return decrypted_data, key
+    
 
