@@ -28,6 +28,11 @@ class Transform:
         Case Transform
             About - Procedure includes transforming the message from one case to another.
             Key - Choices available [upper, lower, capitalize, alternating, inverse]
+
+        Morse Cypher
+            About - Morse code is a encoding procedure that encodes text characters as standardized sequences of two different signal durations.
+            Strength - Low
+            Key - Choices available [encrypt, decrypt]
         """
 
     def __engines__(self):
@@ -235,12 +240,7 @@ class Cypher:
         Vigenere Cypher
             About - Procedure includes encrypting alphabetic text by using a random sample genrated from a seed.
             Strength - High
-            Key - <int> type key required for encryption or decryption
-        
-        Morse Cypher
-            About - Morse code is a encoding procedure that encodes text characters as standardized sequences of two different signal durations.
-            Strength - Low
-            Key - Not required
+            Key - <int> type key required for encryption or decryption 
 
         Note - Key provided/generated during encryption should be used for a successful decryption.
         """
