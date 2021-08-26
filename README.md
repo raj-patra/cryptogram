@@ -7,6 +7,7 @@ provision to get back the data once transformed.
 * Symbol Reversal
 * Numeric System
 * Case Transform
+* Morse Transform
 
 ### Encryption engines
 Encryption engines have the provision to encrypt and decrypt a message generally dependent on a key which
@@ -24,7 +25,6 @@ needs to be passed as an argument during encryption and decryprtion.
 * [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
 * [Pseudo Random](http://www.google.com?query=how%20to%20shuffle%20list%20python)
 * [Vigenere](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher)
-* [Morse](https://en.wikipedia.org/wiki/Morse_code)
 
 ### Encoding engines
 * Work in Progress
