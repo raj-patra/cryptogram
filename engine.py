@@ -167,6 +167,25 @@ class Transform:
             warnings.warn("'morse' engine supports following keys: {}".format(['encrypt', 'decrypt']))
             return "", key
 
+    def alphabetic(self, message: str, key="nato"):
+        if type(message) != str:
+            warnings.warn("'case' engine can only be applied to str type messages.")
+            return "", key
+
+        message = message.upper()
+        transformed_data = []
+        if key == 'nato':
+            for letter in message:
+                if letter in NATO_DICT.keys():
+                    transformed_data.append(NATO_DICT[letter])
+                else:
+                    transformed_data.append(letter)
+            
+            return " ".join(transformed_data), key
+            
+
+
+
 class Cypher:
     def __init__(self):
         self.__symbols__ = deque(sorted(string.ascii_letters+string.digits+string.punctuation+' '))
