@@ -31,5 +31,13 @@ NATO_DICT = {
     "U": "Uniform", "V": "Victor", "W": "Whiskey", "X": "X-ray ",
     "Y": "Yankee", "Z": "Zulu", " ": "(space)", "0": "Zero" ,
     "1": "One", "2": "Two", "3": "Three", "4": "Four" ,
-    "5": "Five", "6": "Six", "7": "Seven", "8": "Eight", "9": "Nine"
+    "5": "Five", "6": "Six", "7": "Seven", "8": "Eight", "9": "Nine",
+    "~": "Tilde", "`": "Back-Quote", "!": "Exclamation", "@": "At",
+    "#": "Hash", "$": "Dollar", "%": "Percent", "^": "Carat",
+    "&": "Ampersand", "*": "Asterisk", "(": "Parenthesis-(open)", ")": "Parenthesis-(closed)",
+    "_": "Underscore", "-": "Hyphen", "+": "Plus", "=": "Equals",
+    "[": "Square-Bracket-(open)", "]": "Square-Bracket-(closed)", "{": "Curly-Bracket-(open)", "}": "Curly-Bracket-(closed)",
+    "|": "Vertical-Slash", "\\": "Back-Slash", ":": "Colon", ";": "Semi-Colon",
+    '"': "Double-Quote", "'": "Single-Quote", "<": "Angle-Bracker-(open)", ">": "Angle-Bracket-(closed)",
+    ",": "Comma", ".": "Period", "?": "Question-Mark", "/": "Forward-Slash"
 }
