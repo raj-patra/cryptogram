@@ -4,8 +4,7 @@ import base64, binascii, math, random, string, warnings, rsa
 from cryptography.fernet import Fernet
 from collections import deque
 from itertools import cycle
-from helpers import *
-
+import helpers
 
 class Transform:
     def __init__(self):
@@ -81,7 +80,7 @@ class Transform:
             warnings.warn("'numeric' engine supports following keys: {}".format(['binary', 'octal', 'decimal', 'hexadecimal']))
             return "", ""
         else:
-            transformed_data = ' '.join(format(ord(i), NUMERIC_DICT[key]) for i in message)
+            transformed_data = ' '.join(format(ord(i), helpers.NUMERIC_DICT[key]) for i in message)
             return transformed_data, key
 
     def case(self, message: str, key="capitalize"):
@@ -136,8 +135,8 @@ class Transform:
             for letter in message:
                 if letter != ' ':
                     try:
-                        transformed_data += MORSE_CODE_DICT[letter] + ' '
-                    except KeyError as e:
+                        transformed_data += helpers.MORSE_CODE_DICT[letter] + ' '
+                    except KeyError:
                         warnings.warn("Some symbols in the input message doesn't have a morse equivalent.")
                         return "", ""
                 else:
@@ -158,7 +157,7 @@ class Transform:
                     if i == 2 :
                         transformed_data += ' '
                     else:
-                        transformed_data += list(MORSE_CODE_DICT.keys())[list(MORSE_CODE_DICT.values()).index(citext)]
+                        transformed_data += list(helpers.MORSE_CODE_DICT.keys())[list(helpers.MORSE_CODE_DICT.values()).index(citext)]
                         citext = ''
         
             return transformed_data, key
@@ -176,8 +175,8 @@ class Transform:
         transformed_data = []
         if key == 'nato':
             for letter in message:
-                if letter in NATO_DICT.keys():
-                    transformed_data.append(NATO_DICT[letter])
+                if letter in helpers.NATO_DICT.keys():
+                    transformed_data.append(helpers.NATO_DICT[letter])
                 else:
                     transformed_data.append(letter)
             
@@ -529,7 +528,7 @@ class Cypher:
                     decrypted_data.append(inverse_key.get(sym))
                 
                 return (''.join(decrypted_data), inverse_key)
-            except Exception as e:
+            except Exception:
                 raise ValueError("Monoalphabetic cypher can be decrypted with the exact same key generated during encryption")
     
     def fernet(self, message: str, encrypt=False, decrypt=False, key=None):
@@ -556,7 +555,7 @@ class Cypher:
                 decrypted_data = Fernet(key).decrypt(message.encode('utf-8')).decode('utf-8')
                 key = key.decode('utf-8')
                 return (decrypted_data, key)
-            except Exception as e:
+            except Exception:
                 raise ValueError("Fernet cypher can be decrypted with the exact same key generated during encryption")
 
     def onetimepad(self, message: str, encrypt=False, decrypt=False, key=None):
@@ -598,7 +597,7 @@ class Cypher:
         """
         if encrypt:
             if type(key) == rsa.key.PublicKey:
-                pass
+                pass # No action needed if user sends the designated PublicKey
             else:
                 (public_key, private_key) = rsa.newkeys(1024)
                 key = public_key
