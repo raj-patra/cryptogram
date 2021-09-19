@@ -179,10 +179,15 @@ class Transform:
                     transformed_data.append(helpers.NATO_DICT[letter])
                 else:
                     transformed_data.append(letter)
+                    
+        if key == 'dutch':
+            for letter in message:
+                if letter in helpers.DUTCH_DICT.keys():
+                    transformed_data.append(helpers.DUTCH_DICT[letter])
+                else:
+                    transformed_data.append(letter)
             
-            return " ".join(transformed_data), key
-            
-
+        return " ".join(transformed_data), key
 
 
 class Cypher:
