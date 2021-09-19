@@ -186,6 +186,9 @@ class Transform:
                     transformed_data.append(helpers.DUTCH_DICT[letter])
                 else:
                     transformed_data.append(letter)
+        
+        else:
+            transformed_data = ["unsupported key"]
             
         return " ".join(transformed_data), key
 
