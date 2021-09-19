@@ -179,6 +179,8 @@ class Transform:
             namespace = helpers.DUTCH
         if key == 'german':
             namespace = helpers.GERMAN
+        if key == 'swedish':
+            namespace = helpers.GERMAN
         else:
             transformed_data = ["unsupported key"]
 

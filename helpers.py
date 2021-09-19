@@ -81,3 +81,23 @@ GERMAN = {
     '"': "Double-Quote", "'": "Single-Quote", "<": "Angle-Bracker-(open)", ">": "Angle-Bracket-(closed)",
     ",": "Comma", ".": "Period", "?": "Question-Mark", "/": "Forward-Slash"
 }
+
+SWEDISH = {
+    "A": "Adam", "B": "Bertil", "C": "Caesar", "D": "David", 
+    "E": "Erik", "F": "Filip", "G": "Gustav", "H": "Helge", 
+    "I": "Ivar", "J": "Johan", "K": "Kalle", "L": "Ludvig", 
+    "M": "Martin", "N": "Niklas", "O": "Olof", "P": "Petter", 
+    "Q": "Qvintus", "R": "Rudolf", "S": "Sigurd", "T": "Tore", 
+    "U": "Urban", "V": "Viktor", "W": "Wilhelm", "X": "Xerxes", 
+    "Y": "Yngve", "Z": "Zäta", " ": " (mellanslag)", "0": "Zero" ,
+    "1": "One", "2": "Two", "3": "Three", "4": "Four" ,
+    "5": "Five", "6": "Six", "7": "Seven", "8": "Eight", "9": "Nine",
+    "~": "Tilde", "`": "Back-Quote", "!": "Exclamation", "@": "At",
+    "#": "Hash", "$": "Dollar", "%": "Percent", "^": "Carat",
+    "&": "Ampersand", "*": "Asterisk", "(": "Parenthesis-(open)", ")": "Parenthesis-(closed)",
+    "_": "Underscore", "-": "Hyphen", "+": "Plus", "=": "Equals",
+    "[": "Square-Bracket-(open)", "]": "Square-Bracket-(closed)", "{": "Curly-Bracket-(open)", "}": "Curly-Bracket-(closed)",
+    "|": "Vertical-Slash", "\\": "Back-Slash", ":": "Colon", ";": "Semi-Colon",
+    '"': "Double-Quote", "'": "Single-Quote", "<": "Angle-Bracker-(open)", ">": "Angle-Bracket-(closed)",
+    ",": "Comma", ".": "Period", "?": "Question-Mark", "/": "Forward-Slash"
+}
