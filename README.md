@@ -8,6 +8,11 @@ provision to get back the data once transformed.
 * Numeric System
 * Case Transform
 * Morse Transform
+* Alphabetic Transform
+    * NATO phonetic alphabet
+    * Dutch spelling alphabet
+    * German spelling alphabet
+    * Swedish spelling alphabet
 
 ### Encryption engines
 Encryption engines have the provision to encrypt and decrypt a message generally dependent on a key which
