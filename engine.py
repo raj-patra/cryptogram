@@ -167,6 +167,15 @@ class Transform:
             return "", key
 
     def alphabetic(self, message: str, key="nato"):
+        """Procedure includes transforming the message from one letters to various alphabet systems.
+
+        Args:
+            message (str): message to be encrypted/decrypted.
+            type (str, required): Choices available [nato, dutch, german, swedish]. Defaults to nato.
+
+        Returns:
+            tuple: transformed data , key
+        """
         if type(message) != str:
             warnings.warn("'case' engine can only be applied to str type messages.")
             return "", key
