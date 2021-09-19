@@ -174,22 +174,20 @@ class Transform:
         message = message.upper()
         transformed_data = []
         if key == 'nato':
-            for letter in message:
-                if letter in helpers.NATO_DICT.keys():
-                    transformed_data.append(helpers.NATO_DICT[letter])
-                else:
-                    transformed_data.append(letter)
-                    
+            namespace = helpers.NATO
         if key == 'dutch':
-            for letter in message:
-                if letter in helpers.DUTCH_DICT.keys():
-                    transformed_data.append(helpers.DUTCH_DICT[letter])
-                else:
-                    transformed_data.append(letter)
-        
+            namespace = helpers.DUTCH
+        if key == 'german':
+            namespace = helpers.GERMAN
         else:
             transformed_data = ["unsupported key"]
-            
+
+        for letter in message:
+            if letter in namespace.keys():
+                transformed_data.append(namespace[letter])
+            else:
+                transformed_data.append(letter)
+
         return " ".join(transformed_data), key
 
 

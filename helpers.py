@@ -22,7 +22,7 @@ NUMERIC_DICT = {
     "hexadecimal": '08x',
 }
 
-NATO_DICT = {
+NATO = {
     "A": "Alfa", "B": "Bravo", "C": "Charlie", "D": "Delta",
     "E": "Echo", "F": "Foxtrot", "G": "Golf", "H": "Hotel" ,
     "I": "India", "J": "Juliett", "K": "Kilo", "L": "Lima" ,
@@ -42,14 +42,34 @@ NATO_DICT = {
     ",": "Comma", ".": "Period", "?": "Question-Mark", "/": "Forward-Slash"
 }
 
-DUTCH_DICT = {
-    'A': 'Anton', 'B': 'Bernhard', 'C': 'Cornelis', 'D': 'Dirk', 
-    'E': 'Eduard', 'F': 'Ferdinand', 'G': 'Gerard', 'H': 'Hendrik', 
-    'I': 'Izaak', 'J': 'Johan', 'K': 'Karel', 'L': 'Lodewijk', 
-    'M': 'Maria', 'N': 'Nico', 'O': 'Otto', 'P': 'Pieter', 
-    'Q': 'Quirinius', 'R': 'Richard', 'S': 'Simon', 'T': 'Theodoor', 
-    'U': 'Utrecht', 'V': 'Victor', 'W': 'Willem', 'X': 'Xantippe', 
-    'Y': 'Ypsilon', 'Z': 'Zacharias', ' ': '(spatiebalk)', "0": "Zero" ,
+DUTCH = {
+    "A": "Anton", "B": "Bernhard", "C": "Cornelis", "D": "Dirk", 
+    "E": "Eduard", "F": "Ferdinand", "G": "Gerard", "H": "Hendrik", 
+    "I": "Izaak", "J": "Johan", "K": "Karel", "L": "Lodewijk", 
+    "M": "Maria", "N": "Nico", "O": "Otto", "P": "Pieter", 
+    "Q": "Quirinius", "R": "Richard", "S": "Simon", "T": "Theodoor", 
+    "U": "Utrecht", "V": "Victor", "W": "Willem", "X": "Xantippe", 
+    "Y": "Ypsilon", "Z": "Zacharias", " ": "(spatiebalk)", "0": "Zero" ,
+    "1": "One", "2": "Two", "3": "Three", "4": "Four" ,
+    "5": "Five", "6": "Six", "7": "Seven", "8": "Eight", "9": "Nine",
+    "~": "Tilde", "`": "Back-Quote", "!": "Exclamation", "@": "At",
+    "#": "Hash", "$": "Dollar", "%": "Percent", "^": "Carat",
+    "&": "Ampersand", "*": "Asterisk", "(": "Parenthesis-(open)", ")": "Parenthesis-(closed)",
+    "_": "Underscore", "-": "Hyphen", "+": "Plus", "=": "Equals",
+    "[": "Square-Bracket-(open)", "]": "Square-Bracket-(closed)", "{": "Curly-Bracket-(open)", "}": "Curly-Bracket-(closed)",
+    "|": "Vertical-Slash", "\\": "Back-Slash", ":": "Colon", ";": "Semi-Colon",
+    '"': "Double-Quote", "'": "Single-Quote", "<": "Angle-Bracker-(open)", ">": "Angle-Bracket-(closed)",
+    ",": "Comma", ".": "Period", "?": "Question-Mark", "/": "Forward-Slash"
+}
+
+GERMAN = {
+    "A": "Anton", "B": "Berta", "C": "Cäsar", "D": "Dora", 
+    "E": "Emil", "F": "Friedrich", "G": "Gustav", "H": "Heinrich", 
+    "I": "Ida", "J": "Julius", "K": "Kaufmann", "L": "Ludwig", 
+    "M": "Martha", "N": "Nordpol", "O": "Otto", "P": "Paula", 
+    "Q": "Quelle", "R": "Richard", "S": "Samuel", "T": "Theodor", 
+    "U": "Ulrich", "V": "Viktor", "W": "Wilhelm", "X": "Xanthippe", 
+    "Y": "Ypsilon", "Z": "Zacharias", " ": "'(Leertaste)", "0": "Zero" ,
     "1": "One", "2": "Two", "3": "Three", "4": "Four" ,
     "5": "Five", "6": "Six", "7": "Seven", "8": "Eight", "9": "Nine",
     "~": "Tilde", "`": "Back-Quote", "!": "Exclamation", "@": "At",
