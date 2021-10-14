@@ -29,11 +29,11 @@ class Encode:
         """encodes message attribute with the specified engine
 
         Args:
-            message (str, optional): message to be encrypted. Defaults to 'hello world'.
-            engine (str, optional): engine to be used for encryption. Defaults to 'base64'.
+            message (str, optional): message to be encoded. Defaults to 'hello world'.
+            engine (str, optional): engine to be used for encoding. Defaults to 'base64'.
 
         Returns:
-           dict: dictionary with encrypted message, key and the engine used.
+           dict: dictionary with encoded message and the engine used.
         """
         encoded = eval("self."+engine)(message=message, encode=True, decode=False)
         return {'encrypted_message': encoded, 'engine': engine}
