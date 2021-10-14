@@ -42,11 +42,11 @@ class Encode:
         """decodes message attribute with the specified engine
 
         Args:
-            message (str, optional): message to be decrypted. Defaults to 'uryy|-%| yq'.
-            engine (str, optional): engine to be used for decryption. Defaults to 'rot13'.
+            message (str, optional): message to be decoded. Defaults to 'aGVsbG8gd29ybGQ='.
+            engine (str, optional): engine to be used for decryption. Defaults to 'base64'.
 
         Returns:
-           dict: dictionary with decrypted message, key and the engine used.
+           dict: dictionary with decoded message and the engine used.
         """
         decoded = eval("self."+engine)(message=message, encode=False, decode=True)
         return {'decrypted_message': decoded, 'engine': engine}
