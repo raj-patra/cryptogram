@@ -6,6 +6,73 @@ from collections import deque
 from itertools import cycle
 import helpers
 
+
+class Encode:
+    def __init__(self):
+        self.__symbols__ = deque(sorted(string.ascii_letters+string.digits+string.punctuation+' '))
+
+    def __str__(self):
+        return """
+        Cryptogram provides its users with a variety of Encoding Engines to encode their messages
+
+        Available Engines:
+
+        Base64 Cypher
+            About - Procedure includes standard text-to-binary encoding scheme.
+        
+        """
+
+    def __engines__(self):
+        return [x for x in dir(self) if not x.startswith('__')]
+
+    def encode(self, message='hello world', engine='base64'):
+        """encodes message attribute with the specified engine
+
+        Args:
+            message (str, optional): message to be encrypted. Defaults to 'hello world'.
+            engine (str, optional): engine to be used for encryption. Defaults to 'base64'.
+
+        Returns:
+           dict: dictionary with encrypted message, key and the engine used.
+        """
+        encoded = eval("self."+engine)(message=message, encode=True, decode=False)
+        return {'encrypted_message': encoded, 'engine': engine}
+    
+    def decode(self, message='aGVsbG8gd29ybGQ=', engine='base64'):
+        """decodes message attribute with the specified engine
+
+        Args:
+            message (str, optional): message to be decrypted. Defaults to 'uryy|-%| yq'.
+            engine (str, optional): engine to be used for decryption. Defaults to 'rot13'.
+
+        Returns:
+           dict: dictionary with decrypted message, key and the engine used.
+        """
+        decoded = eval("self."+engine)(message=message, encode=False, decode=True)
+        return {'decrypted_message': decoded, 'engine': engine}
+
+
+    def base64(self, message: str, encode=False, decode=False):
+        """About - Procedure includes standard text-to-binary encoding scheme.
+
+        Args:
+            message (str): message to be encrypted/decrypted.
+            encrypt (bool, optional): Mode of operation. Defaults to False.
+            decrypt (bool, optional): Mode of operation. Defaults to False.
+            key (None, optional): No key required for encryption or decryption.
+
+        Returns:
+            tuple: encrypted/decrypted data , key
+        """
+        if encode:
+            encrypted_data = base64.b64encode(message.encode('ascii'))
+            return (encrypted_data.decode('ascii'))
+        if decode:
+            decrypted_data = base64.b64decode(message.encode('ascii'))
+            return (decrypted_data.decode('ascii'))
+ 
+
+
 class Transform:
     def __init__(self):
         self.__symbols__ = deque(sorted(string.ascii_letters+string.digits+string.punctuation+' '))
