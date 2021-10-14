@@ -43,7 +43,7 @@ class Encode:
 
         Args:
             message (str, optional): message to be decoded. Defaults to 'aGVsbG8gd29ybGQ='.
-            engine (str, optional): engine to be used for decryption. Defaults to 'base64'.
+            engine (str, optional): engine to be used for decoding. Defaults to 'base64'.
 
         Returns:
            dict: dictionary with decoded message and the engine used.
@@ -57,12 +57,11 @@ class Encode:
 
         Args:
             message (str): message to be encrypted/decrypted.
-            encrypt (bool, optional): Mode of operation. Defaults to False.
-            decrypt (bool, optional): Mode of operation. Defaults to False.
-            key (None, optional): No key required for encryption or decryption.
+            encode (bool, optional): Mode of operation. Defaults to False.
+            decode (bool, optional): Mode of operation. Defaults to False.
 
         Returns:
-            tuple: encrypted/decrypted data , key
+            tuple: encoded/decoded data
         """
         if encode:
             encrypted_data = base64.b64encode(message.encode('ascii'))
