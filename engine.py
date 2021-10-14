@@ -36,7 +36,7 @@ class Encode:
            dict: dictionary with encoded message and the engine used.
         """
         encoded = eval("self."+engine)(message=message, encode=True, decode=False)
-        return {'encrypted_message': encoded, 'engine': engine}
+        return {'encoded_message': encoded, 'engine': engine}
     
     def decode(self, message='aGVsbG8gd29ybGQ=', engine='base64'):
         """decodes message attribute with the specified engine
@@ -49,7 +49,7 @@ class Encode:
            dict: dictionary with decoded message and the engine used.
         """
         decoded = eval("self."+engine)(message=message, encode=False, decode=True)
-        return {'decrypted_message': decoded, 'engine': engine}
+        return {'decoded_message': decoded, 'engine': engine}
 
 
     def base64(self, message: str, encode=False, decode=False):
