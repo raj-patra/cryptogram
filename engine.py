@@ -498,25 +498,6 @@ class Cypher:
 
             return (''.join(decrypted_data), int(key))
 
-    def base64(self, message: str, encrypt=False, decrypt=False, key=None):
-        """About - Procedure includes standard text-to-binary encoding scheme.
-
-        Args:
-            message (str): message to be encrypted/decrypted.
-            encrypt (bool, optional): Mode of operation. Defaults to False.
-            decrypt (bool, optional): Mode of operation. Defaults to False.
-            key (None, optional): No key required for encryption or decryption.
-
-        Returns:
-            tuple: encrypted/decrypted data , key
-        """
-        if encrypt:
-            encrypted_data = base64.b64encode(message.encode('ascii'))
-            return (encrypted_data.decode('ascii'), key)
-        if decrypt:
-            decrypted_data = base64.b64decode(message.encode('ascii'))
-            return (decrypted_data.decode('ascii'), key)
-
     def xor(self, message: str, encrypt=False, decrypt=False, key=None):
         """About - Procedure includes applying xor operator on message and key..
 
