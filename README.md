@@ -1,5 +1,9 @@
-# Cryptogram
-Cryptography engine with all the popular encrypting, encoding and transforming algorithms.
+# 🐱‍💻Cryptogram
+Cryptography engine with `almost` all of the popular encrypting, encoding and transforming algorithms.
+
+[![forthebadge](https://forthebadge.com/images/badges/built-with-swag.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/powered-by-black-magic.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/check-it-out.svg)](https://forthebadge.com)
 
 ### Transformation engines
 Transformation engines convert the target message from one form/class to another. It doesn't have any
@@ -21,7 +25,6 @@ needs to be passed as an argument during encryption and decryprtion.
 * [Shifting Caesar](https://en.wikipedia.org/wiki/Caesar_cipher)
 * [ROT13](https://en.wikipedia.org/wiki/ROT13)
 * [Transposition](https://en.wikipedia.org/wiki/Transposition_cipher)
-* [Base64](https://en.wikipedia.org/wiki/Base64)
 * [Xor](https://en.wikipedia.org/wiki/XOR_cipher)
 * [Multiplicative](https://www.tutorialspoint.com/cryptography_with_python/cryptography_with_python_multiplicative_cipher.htm)
 * [Monoalphabetic](https://en.wikipedia.org/wiki/Substitution_cipher)
@@ -31,8 +34,10 @@ needs to be passed as an argument during encryption and decryprtion.
 * [Pseudo Random](http://www.google.com?query=how%20to%20shuffle%20list%20python)
 * [Vigenere](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher)
 
-### Encoding engines
-* Work in Progress
+### Encoding engines - WIP
+Encoding engines process data into a format required for various kinds of information processing procedures, data transmission, storage and compression/decompression.
+* [Base64](https://en.wikipedia.org/wiki/Base64)
+
 
 ### Clone and setup
 ```
@@ -54,3 +59,5 @@ decrypted = obj.decrypt(message=encrypted['encrypted_message'], engine=encrypted
 # {'decrypted_message': 'hello world', 'key': 16196516, 'engine': 'multiplicative'}
 
 ```
+
+> Please think of leaving a star on the repo if you think it sparked your curiosity. 🙏
