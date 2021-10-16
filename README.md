@@ -6,6 +6,7 @@ Cryptography engine with `almost` all of the popular encrypting, encoding and tr
 [![forthebadge](https://forthebadge.com/images/badges/check-it-out.svg)](https://forthebadge.com)
 
 ### Encryption engines
+---
 Encryption engines have the provision to encrypt and decrypt a message generally dependent on a key which
 needs to be passed as an argument during encryption and decryprtion.
 * [Caeser](https://en.wikipedia.org/wiki/Caesar_cipher)
@@ -22,6 +23,7 @@ needs to be passed as an argument during encryption and decryprtion.
 * [Vigenere](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher)
 
 ### Transformation engines
+---
 Transformation engines convert the target message from one form/class to another. It doesn't have any
 provision to get back the data once transformed.
 * Symbol Reversal
@@ -35,6 +37,7 @@ provision to get back the data once transformed.
     * Swedish spelling alphabet
 
 ### Encoding engines - WIP
+---
 Encoding engines process data into a format required for various kinds of information processing procedures, data transmission, storage and compression/decompression.
 * [Base64](https://en.wikipedia.org/wiki/Base64)
 
