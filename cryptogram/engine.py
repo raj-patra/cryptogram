@@ -1,10 +1,11 @@
 # Imports
 import base64, binascii, math, random, string, warnings, rsa
+import requests
 
 from cryptography.fernet import Fernet
 from collections import deque
 from itertools import cycle
-import helpers
+from . import helpers
 
 
 class Encode:
@@ -70,7 +71,13 @@ class Encode:
             decodeded_data = base64.b64decode(message.encode('ascii'))
             return (decodeded_data.decode('ascii'))
  
-
+    def url(self, message: str, encode=False, decode=False):
+        if encode:
+            encoded_data = requests.utils.quote(message)
+            return encoded_data
+        elif decode:
+            decoded_data = requests.utils.unquote(message)
+            return decoded_data
 
 class Transform:
     def __init__(self):
@@ -734,6 +741,4 @@ class Cypher:
                 decrypted_data += self.__symbols__[index]
 
             return (decrypted_data, int(key))
-
-    
 
