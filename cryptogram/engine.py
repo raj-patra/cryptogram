@@ -64,11 +64,11 @@ class Encode:
             tuple: encoded/decoded data
         """
         if encode:
-            encrypted_data = base64.b64encode(message.encode('ascii'))
-            return (encrypted_data.decode('ascii'))
+            encoded_data = base64.b64encode(message.encode('ascii'))
+            return (encoded_data.decode('ascii'))
         if decode:
-            decrypted_data = base64.b64decode(message.encode('ascii'))
-            return (decrypted_data.decode('ascii'))
+            decodeded_data = base64.b64decode(message.encode('ascii'))
+            return (decodeded_data.decode('ascii'))
  
 
 
