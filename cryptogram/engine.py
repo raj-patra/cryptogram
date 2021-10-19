@@ -18,7 +18,7 @@ class Encode:
 
         Available Engines:
 
-        Base64 Cypher
+        Base64 Encoding
             About - Procedure includes standard text-to-binary encoding scheme.
         
         """
