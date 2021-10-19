@@ -20,6 +20,9 @@ class Encode:
 
         Base64 Encoding
             About - Procedure includes standard text-to-binary encoding scheme.
+
+        URL Encoding
+            About - Procedure includes encoding arbitrary data using only the limited US-ASCII characters.
         
         """
 
