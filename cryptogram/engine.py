@@ -72,6 +72,18 @@ class Encode:
             return (decodeded_data.decode('ascii'))
  
     def url(self, message: str, encode=False, decode=False):
+        """
+        About - URL encoding, is a method to encode arbitrary data in a Uniform Resource Identifier 
+        using only the limited US-ASCII characters legal within a URI.
+
+        Args:
+            message (str): message to be encrypted/decrypted.
+            encode (bool, optional): Mode of operation. Defaults to False.
+            decode (bool, optional): Mode of operation. Defaults to False.
+
+        Returns:
+            tuple: encoded/decoded data
+        """
         if encode:
             encoded_data = requests.utils.quote(message)
             return encoded_data
