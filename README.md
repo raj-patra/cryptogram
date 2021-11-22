@@ -1,5 +1,5 @@
 # 🐱‍💻Cryptogram
-Cryptography engine with `almost` all of the popular encrypting, encoding and transforming algorithms.
+Cryptogram is a cryptography engine with `almost` all of the popular encrypting, encoding and transforming algorithms.
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-swag.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/powered-by-black-magic.svg)](https://forthebadge.com)
