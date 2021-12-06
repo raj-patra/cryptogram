@@ -94,6 +94,7 @@ class Encode:
             decoded_data = requests.utils.unquote(message)
             return decoded_data
 
+
 class Transform:
     def __init__(self):
         self.__symbols__ = deque(sorted(string.ascii_letters+string.digits+string.punctuation+' '))
@@ -363,6 +364,11 @@ class Cypher:
         Vigenere Cypher
             About - Procedure includes encrypting alphabetic text by using a random sample genrated from a seed.
             Strength - High
+            Key - <int> type key required for encryption or decryption 
+            
+        Rail Fence Cypher
+            About - Procedure includes encrypting alphabetic text in zig-zag order. It is a form of transposition cypher.
+            Strength - Moderate
             Key - <int> type key required for encryption or decryption 
 
         Note - Key provided/generated during encryption should be used for a successful decryption.
@@ -848,3 +854,4 @@ class Cypher:
                     
             decrypted_data = ''.join(result)            
             return(decrypted_data, int(key))
+
