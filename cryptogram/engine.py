@@ -836,5 +836,6 @@ class Cypher:
                     row += 1
                 else:
                     row -= 1
-            
-            return("".join(result), int(key))
+                    
+            decrypted_data = ''.join(result)            
+            return(decrypted_data, int(key))
