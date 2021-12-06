@@ -21,6 +21,7 @@ needs to be passed as an argument during encryption and decryprtion.
 * [RSA](https://en.wikipedia.org/wiki/RSA_(cryptosystem))
 * [Pseudo Random](http://www.google.com?query=how%20to%20shuffle%20list%20python)
 * [Vigenere](https://en.wikipedia.org/wiki/Vigen%C3%A8re_cipher)
+* [Rail Fence](https://en.wikipedia.org/wiki/Rail_fence_cipher)
 
 ### Transformation engines
 ---
