@@ -757,3 +757,34 @@ class Cypher:
 
             return (decrypted_data, int(key))
 
+    def rail_fence(self, message: str, encrypt=False, decrypt=False, key=None):
+        
+        if type(key) != int:
+            warnings.warn("int based key is preferred for rail fence cypher. Assuming random key.")
+            key = random.randint(1, 10)
+            
+        if encrypt:
+            rail = [['\n' for _ in range(len(message))] for _ in range(key)]
+     
+            dir_down = False
+            row, col = 0, 0
+            
+            for i in range(len(message)):
+                if (row == 0) or (row == key - 1):
+                    dir_down = not dir_down
+                
+                rail[row][col] = message[i]
+                col += 1
+                
+                if dir_down:
+                    row += 1
+                else:
+                    row -= 1
+
+            result = []
+            for i in range(key):
+                for j in range(len(message)):
+                    if rail[i][j] != '\n':
+                        result.append(rail[i][j])
+                        
+            return ("".join(result), int(key))
