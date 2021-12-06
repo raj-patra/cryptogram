@@ -787,4 +787,5 @@ class Cypher:
                     if rail[i][j] != '\n':
                         result.append(rail[i][j])
                         
-            return ("".join(result), int(key))
+            encrypted_data = ''.join(result)
+            return (encrypted_data, int(key))
