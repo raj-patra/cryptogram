@@ -758,7 +758,17 @@ class Cypher:
             return (decrypted_data, int(key))
 
     def rail_fence(self, message: str, encrypt=False, decrypt=False, key=None):
-        
+        """Procedure includes encrypting alphabetic text in zig-zag order. It is a form of transposition cypher.
+
+        Args:
+            message (str): message to be encrypted/decrypted.
+            encrypt (bool, optional): Mode of operation. Defaults to False.
+            decrypt (bool, optional): Mode of operation. Defaults to False.
+            key (int): <int> type key required for encryption or decryption. Defaults to randint(1, 10).
+
+        Returns:
+            tuple: encrypted/decrypted data , key
+        """
         if type(key) != int:
             warnings.warn("int based key is preferred for rail fence cypher. Assuming random key.")
             key = random.randint(1, 10)
@@ -796,7 +806,6 @@ class Cypher:
             dir_down = None
             row, col = 0, 0
      
-            # mark the places with '*'
             for i in range(len(message)):
                 if row == 0:
                     dir_down = True
