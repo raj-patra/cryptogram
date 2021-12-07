@@ -12,6 +12,7 @@ import requests
 import rsa
 from cryptography.fernet import Fernet
 
+from constants import CYPHER, ENCODE, TRANSFORM
 
 from . import helpers
 
@@ -21,7 +22,7 @@ class Encode:
         self.__symbols__ = deque(sorted(string.ascii_letters+string.digits+string.punctuation+' '))
 
     def __str__(self):
-        return 
+        return ENCODE
 
     def __engines__(self):
         return [x for x in dir(self) if not x.startswith('__')]
@@ -97,7 +98,7 @@ class Transform:
         self.__symbols__ = deque(sorted(string.ascii_letters+string.digits+string.punctuation+' '))
 
     def __str__(self):
-        return
+        return TRANSFORM
 
     def __engines__(self):
         return [x for x in dir(self) if not x.startswith('__')]
@@ -272,7 +273,7 @@ class Cypher:
         self.__symbols__ = deque(sorted(string.ascii_letters+string.digits+string.punctuation+' '))
 
     def __str__(self):
-        return 
+        return CYPHER
 
     def __engines__(self):
         return [x for x in dir(self) if not x.startswith('__')]
