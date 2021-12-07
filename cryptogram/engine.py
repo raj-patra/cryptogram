@@ -1,10 +1,17 @@
 # Imports
-import base64, binascii, math, random, string, warnings, rsa
-import requests
-
-from cryptography.fernet import Fernet
+import base64
+import binascii
+import math
+import random
+import string
+import warnings
 from collections import deque
 from itertools import cycle
+
+import requests
+import rsa
+from cryptography.fernet import Fernet
+
 from . import helpers
 
 
