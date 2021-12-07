@@ -8,16 +8,10 @@ import warnings
 from collections import deque
 from itertools import cycle
 
-import requests
 import rsa
 from cryptography.fernet import Fernet
 
-from constants import CYPHER, ENCODE, TRANSFORM
-
-from . import helpers
-
-
-
+from constants import CYPHER
 
 
 class Cypher:

@@ -54,7 +54,7 @@ pip install -r requirements.txt
 ### Usage
 Make sure to keep the cloned folder inside your project directory
 ```python
-from cryptogram.engine import Cypher
+from cryptogram.cypher import Cypher
 
 obj = Cypher()
 encrypted = obj.encrypt(message='hello world', engine='multiplicative',  key=16196516)
