@@ -27,7 +27,10 @@ ENCODE = """
     Available Engines:
 
     Base64 Encoding
-        About - Procedure includes standard text-to-binary encoding scheme.
+        About - Procedure includes standard text-to-binary encoding scheme (64 bit).
+
+    Base32 Encoding
+        About - Procedure includes standard text-to-binary encoding scheme (32 bit).
 
     URL Encoding
         About - Procedure includes encoding arbitrary data using only the limited US-ASCII characters.
