@@ -46,7 +46,7 @@ class Encode:
 
 
     def base64(self, message: str, encode=False, decode=False):
-        """About - Procedure includes standard text-to-binary encoding scheme.
+        """About - Procedure includes standard text-to-binary encoding scheme (64 bit).
 
         Args:
             message (str): message to be encrypted/decrypted.
@@ -64,7 +64,16 @@ class Encode:
             return (decodeded_data.decode('ascii'))
 
     def base32(self, message: str, encode=False, decode=False):
-        
+        """About - Procedure includes standard text-to-binary encoding scheme (32 bit).
+
+        Args:
+            message (str): message to be encrypted/decrypted.
+            encode (bool, optional): Mode of operation. Defaults to False.
+            decode (bool, optional): Mode of operation. Defaults to False.
+
+        Returns:
+            tuple: encoded/decoded data
+        """
         if encode:
             encoded_data = base64.b32encode(message.encode('ascii'))
             return (encoded_data.decode('ascii'))
