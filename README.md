@@ -37,10 +37,11 @@ provision to get back the data once transformed.
     * German spelling alphabet
     * Swedish spelling alphabet
 
-### Encoding engines - WIP
+### Encoding engines
 ---
 Encoding engines process data into a format required for various kinds of information processing procedures, data transmission, storage and compression/decompression.
 * [Base64](https://en.wikipedia.org/wiki/Base64)
+* [Base32](https://en.wikipedia.org/wiki/Base32)
 * [URL](https://en.wikipedia.org/wiki/Percent-encoding)
 
 
