@@ -3,7 +3,7 @@ import string
 import warnings
 from collections import deque
 
-from constants import TRANSFORM
+from . constants import TRANSFORM
 
 from . import helpers
 

@@ -5,7 +5,7 @@ from collections import deque
 
 import requests
 
-from constants import ENCODE
+from . constants import ENCODE
 
 
 class Encode:
@@ -61,6 +61,15 @@ class Encode:
             return (encoded_data.decode('ascii'))
         if decode:
             decodeded_data = base64.b64decode(message.encode('ascii'))
+            return (decodeded_data.decode('ascii'))
+
+    def base32(self, message: str, encode=False, decode=False):
+        
+        if encode:
+            encoded_data = base64.b32encode(message.encode('ascii'))
+            return (encoded_data.decode('ascii'))
+        if decode:
+            decodeded_data = base64.b32decode(message.encode('ascii'))
             return (decodeded_data.decode('ascii'))
  
     def url(self, message: str, encode=False, decode=False):

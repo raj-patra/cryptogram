@@ -11,7 +11,7 @@ from itertools import cycle
 import rsa
 from cryptography.fernet import Fernet
 
-from constants import CYPHER
+from . constants import CYPHER
 
 
 class Cypher:
