@@ -80,6 +80,15 @@ class Encode:
         if decode:
             decodeded_data = base64.b32decode(message.encode('ascii'))
             return (decodeded_data.decode('ascii'))
+
+    def base16(self, message: str, encode=False, decode=False):
+        
+        if encode:
+            encoded_data = base64.b16encode(message.encode('ascii'))
+            return (encoded_data.decode('ascii'))
+        if decode:
+            decodeded_data = base64.b16decode(message.encode('ascii'))
+            return (decodeded_data.decode('ascii'))
  
     def url(self, message: str, encode=False, decode=False):
         """
