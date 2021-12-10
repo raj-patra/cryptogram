@@ -32,6 +32,9 @@ ENCODE = """
     Base32 Encoding
         About - Procedure includes standard text-to-binary encoding scheme (32 bit).
 
+    Base16 Encoding
+        About - Procedure includes standard text-to-binary encoding scheme (16 bit).
+
     URL Encoding
         About - Procedure includes encoding arbitrary data using only the limited US-ASCII characters.
 
