@@ -1,9 +1,8 @@
-from base64 import decode, encode
-from cryptogram.cypher import Cypher
-from cryptogram.transform import Transform
-from cryptogram.encode import Encode
-
 import unittest
+
+from cryptogram.cypher import Cypher
+from cryptogram.encode import Encode
+from cryptogram.transform import Transform
 
 
 class TestCryptogram(unittest.TestCase):
