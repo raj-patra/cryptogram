@@ -43,6 +43,7 @@ Encoding engines process data into a format required for various kinds of inform
 * [Base64](https://en.wikipedia.org/wiki/Base64)
 * [Base32](https://en.wikipedia.org/wiki/Base32)
 * [Base16](https://en.wikipedia.org/wiki/Base16)
+* [Ascii85](https://en.wikipedia.org/wiki/Ascii85)
 * [URL](https://en.wikipedia.org/wiki/Percent-encoding)
 
 
