@@ -100,7 +100,16 @@ class Encode:
             return (decodeded_data.decode('ascii'))
 
     def base85(self, message: str, encode=False, decode=False):
-        
+        """About - Procedure includes standard text-to-binary encoding scheme (85 bit).
+
+        Args:
+            message (str): message to be encrypted/decrypted.
+            encode (bool, optional): Mode of operation. Defaults to False.
+            decode (bool, optional): Mode of operation. Defaults to False.
+
+        Returns:
+            tuple: encoded/decoded data
+        """
         if encode:
             encoded_data = base64.b85encode(message.encode('ascii'))
             return (encoded_data.decode('ascii'))
