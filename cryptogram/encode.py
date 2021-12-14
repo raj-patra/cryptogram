@@ -44,7 +44,43 @@ class Encode:
         decoded = eval("self."+engine)(message=message, encode=False, decode=True)
         return {'decoded_message': decoded, 'engine': engine}
 
+    
+    def ascii85(self, message: str, encode=False, decode=False):
+        """About - Procedure includes standard ascii encoding scheme (85 bit).
 
+        Args:
+            message (str): message to be encrypted/decrypted.
+            encode (bool, optional): Mode of operation. Defaults to False.
+            decode (bool, optional): Mode of operation. Defaults to False.
+
+        Returns:
+            tuple: encoded/decoded data
+        """
+        if encode:
+            encoded_data = base64.a85encode(message.encode('ascii'))
+            return (encoded_data.decode('ascii'))
+        if decode:
+            decodeded_data = base64.a85decode(message.encode('ascii'))
+            return (decodeded_data.decode('ascii'))
+
+    def base85(self, message: str, encode=False, decode=False):
+        """About - Procedure includes standard text-to-binary encoding scheme (85 bit).
+
+        Args:
+            message (str): message to be encrypted/decrypted.
+            encode (bool, optional): Mode of operation. Defaults to False.
+            decode (bool, optional): Mode of operation. Defaults to False.
+
+        Returns:
+            tuple: encoded/decoded data
+        """
+        if encode:
+            encoded_data = base64.b85encode(message.encode('ascii'))
+            return (encoded_data.decode('ascii'))
+        if decode:
+            decodeded_data = base64.b85decode(message.encode('ascii'))
+            return (decodeded_data.decode('ascii'))
+    
     def base64(self, message: str, encode=False, decode=False):
         """About - Procedure includes standard text-to-binary encoding scheme (64 bit).
 
@@ -99,42 +135,6 @@ class Encode:
             decodeded_data = base64.b16decode(message.encode('ascii'))
             return (decodeded_data.decode('ascii'))
 
-    def base85(self, message: str, encode=False, decode=False):
-        """About - Procedure includes standard text-to-binary encoding scheme (85 bit).
-
-        Args:
-            message (str): message to be encrypted/decrypted.
-            encode (bool, optional): Mode of operation. Defaults to False.
-            decode (bool, optional): Mode of operation. Defaults to False.
-
-        Returns:
-            tuple: encoded/decoded data
-        """
-        if encode:
-            encoded_data = base64.b85encode(message.encode('ascii'))
-            return (encoded_data.decode('ascii'))
-        if decode:
-            decodeded_data = base64.b85decode(message.encode('ascii'))
-            return (decodeded_data.decode('ascii'))
-
-    def ascii85(self, message: str, encode=False, decode=False):
-        """About - Procedure includes standard ascii encoding scheme (85 bit).
-
-        Args:
-            message (str): message to be encrypted/decrypted.
-            encode (bool, optional): Mode of operation. Defaults to False.
-            decode (bool, optional): Mode of operation. Defaults to False.
-
-        Returns:
-            tuple: encoded/decoded data
-        """
-        if encode:
-            encoded_data = base64.a85encode(message.encode('ascii'))
-            return (encoded_data.decode('ascii'))
-        if decode:
-            decodeded_data = base64.a85decode(message.encode('ascii'))
-            return (decodeded_data.decode('ascii'))
- 
     def url(self, message: str, encode=False, decode=False):
         """
         About - URL encoding, is a method to encode arbitrary data in a Uniform Resource Identifier 
