@@ -44,3 +44,9 @@ class TestCryptogram(unittest.TestCase):
         decoded = self.enc_obj.decode(message=encoded["encoded_message"], engine="url")
         self.assertEqual(decoded["decoded_message"], self.message)
 
+    def test_encode_base85(self):
+        
+        encoded = self.enc_obj.encode(message=self.message, engine="base85")
+        decoded = self.enc_obj.decode(message=encoded["encoded_message"], engine="base85")
+        self.assertEqual(decoded["decoded_message"], self.message)
+  
