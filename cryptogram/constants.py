@@ -36,6 +36,9 @@ ENCODE = """
         About - Procedure includes standard text-to-binary encoding scheme (16 bit).
 
     Ascii85 Encoding
+        About - Procedure includes standard ascii encoding scheme (85 bit).
+
+    Base85 Encoding
         About - Procedure includes standard text-to-binary encoding scheme (85 bit).
 
     URL Encoding
