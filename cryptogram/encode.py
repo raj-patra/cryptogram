@@ -118,7 +118,7 @@ class Encode:
             return (decodeded_data.decode('ascii'))
 
     def ascii85(self, message: str, encode=False, decode=False):
-        """About - Procedure includes standard text-to-binary encoding scheme (85 bit).
+        """About - Procedure includes standard ascii encoding scheme (85 bit).
 
         Args:
             message (str): message to be encrypted/decrypted.
