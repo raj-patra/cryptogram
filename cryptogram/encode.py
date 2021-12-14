@@ -99,6 +99,15 @@ class Encode:
             decodeded_data = base64.b16decode(message.encode('ascii'))
             return (decodeded_data.decode('ascii'))
 
+    def base85(self, message: str, encode=False, decode=False):
+        
+        if encode:
+            encoded_data = base64.b85encode(message.encode('ascii'))
+            return (encoded_data.decode('ascii'))
+        if decode:
+            decodeded_data = base64.b85decode(message.encode('ascii'))
+            return (decodeded_data.decode('ascii'))
+
     def ascii85(self, message: str, encode=False, decode=False):
         """About - Procedure includes standard text-to-binary encoding scheme (85 bit).
 
