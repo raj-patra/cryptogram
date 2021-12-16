@@ -51,7 +51,7 @@ class TestCryptogram(unittest.TestCase):
         self.assertEqual(decoded["decoded_message"], self.message)
   
 
-    def test_transform_numeric(self):
+    def test_transform_reverse(self):
         
         encoded = self.trf_obj.transform(message=self.message, engine="reverse")
         decoded = self.trf_obj.transform(message=encoded["transformed_message"], engine="reverse")
