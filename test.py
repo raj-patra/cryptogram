@@ -56,6 +56,9 @@ class TestCryptogram(unittest.TestCase):
         encoded = self.trf_obj.transform(message=self.message, engine="reverse")
         decoded = self.trf_obj.transform(message=encoded["transformed_message"], engine="reverse")
         self.assertEqual(decoded["transformed_message"], self.message)
+        
+        encoded = self.trf_obj.transform(message=404, engine="reverse")
+        self.assertEqual("", encoded["transformed_message"])
   
     def test_transform_numeric(self):
         
@@ -70,4 +73,7 @@ class TestCryptogram(unittest.TestCase):
         
         encoded = self.trf_obj.transform(message=self.message, engine="numeric", key="hexadecimal")
         self.assertEqual(3, len(encoded.keys()))
+        
+        encoded = self.trf_obj.transform(message=self.message, engine="numeric", key="test")
+        self.assertEqual("", encoded["transformed_message"])
   
