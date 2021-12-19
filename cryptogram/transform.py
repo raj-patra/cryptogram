@@ -43,6 +43,7 @@ class Transform:
         """
         if type(message) != str:
             warnings.warn("'str' object required as 'message' attribute for symbol reversal")
+            return "", ""
 
         return (message[::-1], key)
 
