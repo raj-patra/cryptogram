@@ -64,4 +64,7 @@ class TestCryptogram(unittest.TestCase):
         
         encoded = self.trf_obj.transform(message=self.message, engine="numeric", key="octal")
         self.assertEqual(3, len(encoded.keys()))
+        
+        encoded = self.trf_obj.transform(message=self.message, engine="numeric", key="decimal")
+        self.assertEqual(3, len(encoded.keys()))
   
