@@ -40,11 +40,11 @@ provision to get back the data once transformed.
 ### Encoding engines
 ---
 Encoding engines process data into a format required for various kinds of information processing procedures, data transmission, storage and compression/decompression.
+* [Ascii85](https://en.wikipedia.org/wiki/Ascii85)
+* [Base85](https://en.wikipedia.org/wiki/Base85)
 * [Base64](https://en.wikipedia.org/wiki/Base64)
 * [Base32](https://en.wikipedia.org/wiki/Base32)
 * [Base16](https://en.wikipedia.org/wiki/Base16)
-* [Ascii85](https://en.wikipedia.org/wiki/Ascii85)
-* [Base85](https://en.wikipedia.org/wiki/Base85)
 * [URL](https://en.wikipedia.org/wiki/Percent-encoding)
 
 
