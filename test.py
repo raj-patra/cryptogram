@@ -62,20 +62,20 @@ class TestCryptogram(unittest.TestCase):
   
     def test_transform_numeric(self):
         
-        encoded = self.trf_obj.transform(message=self.message, engine="numeric", key="binary")
-        self.assertEqual(3, len(encoded.keys()))
+        transformed = self.trf_obj.transform(message=self.message, engine="numeric", key="binary")
+        self.assertEqual(3, len(transformed.keys()))
         
-        encoded = self.trf_obj.transform(message=self.message, engine="numeric", key="octal")
-        self.assertEqual(3, len(encoded.keys()))
+        transformed = self.trf_obj.transform(message=self.message, engine="numeric", key="octal")
+        self.assertEqual(3, len(transformed.keys()))
         
-        encoded = self.trf_obj.transform(message=self.message, engine="numeric", key="decimal")
-        self.assertEqual(3, len(encoded.keys()))
+        transformed = self.trf_obj.transform(message=self.message, engine="numeric", key="decimal")
+        self.assertEqual(3, len(transformed.keys()))
         
-        encoded = self.trf_obj.transform(message=self.message, engine="numeric", key="hexadecimal")
-        self.assertEqual(3, len(encoded.keys()))
+        transformed = self.trf_obj.transform(message=self.message, engine="numeric", key="hexadecimal")
+        self.assertEqual(3, len(transformed.keys()))
         
-        encoded = self.trf_obj.transform(message=self.message, engine="numeric", key="test")
-        self.assertEqual("", encoded["transformed_message"])
+        transformed = self.trf_obj.transform(message=self.message, engine="numeric", key="test")
+        self.assertEqual("", transformed["transformed_message"])
 
     def test_transform_case(self):
         
