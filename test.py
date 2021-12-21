@@ -80,3 +80,6 @@ class TestCryptogram(unittest.TestCase):
         
         transformed = self.trf_obj.transform(message=self.message, engine="case", key="upper")
         self.assertEqual(self.message.upper(), transformed["transformed_message"])
+        
+        transformed = self.trf_obj.transform(message=self.message, engine="case", key="lower")
+        self.assertEqual(self.message.lower(), transformed["transformed_message"])
