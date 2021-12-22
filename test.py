@@ -86,3 +86,6 @@ class TestCryptogram(unittest.TestCase):
         
         transformed = self.trf_obj.transform(message=self.message, engine="case", key="capitalize")
         self.assertEqual(self.message.capitalize(), transformed["transformed_message"])
+        
+        transformed = self.trf_obj.transform(message=self.message, engine="case", key="alternating")
+        self.assertEqual(len(self.message), len(transformed["transformed_message"]))
