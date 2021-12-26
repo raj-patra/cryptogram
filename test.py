@@ -99,5 +99,5 @@ class TestCryptogram(unittest.TestCase):
     def test_encode_morse(self):
         
         enrypted = self.trf_obj.transform(message=self.message, key="encrypt")
-        decrypted = self.trf_obj.transform(message=enrypted["transformed_message"], key="decrypt")
+        decrypted = self.trf_obj .transform(message=enrypted["transformed_message"], key="decrypt")
         self.assertEqual(decrypted["transformed_message"], self.message)
