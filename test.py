@@ -101,3 +101,8 @@ class TestCryptogram(unittest.TestCase):
         enrypted = self.trf_obj.transform(message=self.message, key="encrypt")
         decrypted = self.trf_obj .transform(message=enrypted["transformed_message"], key="decrypt")
         self.assertEqual(decrypted["transformed_message"], self.message)
+    
+    def test_transform_alphabetic(self):
+        
+        transformed = self.trf_obj.transform(message=self.message, engine="alphabetic", key="nato")
+        self.assertEqual(3, len(transformed.keys()))
