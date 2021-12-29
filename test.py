@@ -109,3 +109,6 @@ class TestCryptogram(unittest.TestCase):
         
         transformed = self.trf_obj.transform(message=self.message, engine="alphabetic", key="dutch")
         self.assertEqual(3, len(transformed.keys()))
+        
+        transformed = self.trf_obj.transform(message=self.message, engine="alphabetic", key="german")
+        self.assertEqual(3, len(transformed.keys()))
