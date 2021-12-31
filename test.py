@@ -7,7 +7,7 @@ from cryptogram.transform import Transform
 
 class TestCryptogram(unittest.TestCase):
     def setUp(self) -> None:
-        self.message = "Hello World!"
+        self.message = "Hello World"
         self.enc_obj = Encode()
         self.trf_obj = Transform()
         self.cyp_obj = Cypher()
@@ -98,8 +98,8 @@ class TestCryptogram(unittest.TestCase):
             
     def test_encode_morse(self):
         
-        enrypted = self.trf_obj.transform(message=self.message, engine="morse", key="encrypt")
-        decrypted = self.trf_obj .transform(message=enrypted["transformed_message"], engine=enrypted["engine"], key="decrypt")
+        encrypted = self.trf_obj.transform(message=self.message, engine="morse", key="encrypt")
+        decrypted = self.trf_obj .transform(message=encrypted["transformed_message"], engine=encrypted["engine"], key="decrypt")
         self.assertEqual(decrypted["transformed_message"], self.message)
     
     def test_transform_alphabetic(self):
