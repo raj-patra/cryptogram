@@ -165,14 +165,14 @@ class Transform:
         transformed_data = []
         if key == 'nato':
             namespace = helpers.NATO
-        if key == 'dutch':
+        elif key == 'dutch':
             namespace = helpers.DUTCH
-        if key == 'german':
+        elif key == 'german':
             namespace = helpers.GERMAN
-        if key == 'swedish':
+        elif key == 'swedish':
             namespace = helpers.SWEDISH
         else:
-            transformed_data = ["unsupported key"]
+            return "", key
 
         for letter in message:
             if letter in namespace.keys():
