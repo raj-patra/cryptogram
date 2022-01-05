@@ -14,6 +14,10 @@ class TestCryptogram(unittest.TestCase):
         
         return super().setUp()
     
+    def test_encode_init(self):
+        self.assertEqual(str, type(self.enc_obj.__str__()))
+        self.assertEqual(list, type(self.enc_obj.__engines__()))
+    
     def test_encode_base64(self):
         
         encoded = self.enc_obj.encode(message=self.message, engine="base64")
