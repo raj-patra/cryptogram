@@ -104,7 +104,7 @@ class TestCryptogram(unittest.TestCase):
         transformed = self.trf_obj.transform(message=self.message, engine="case", key="test")
         self.assertEqual("", transformed["transformed_message"])
                 
-        transformed = self.trf_obj.transform(message=self.message, engine="case", key=123)
+        transformed = self.trf_obj.transform(message=123, engine="case", key="test")
         self.assertEqual("", transformed["transformed_message"])
             
     def test_transform_morse(self):
