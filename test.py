@@ -143,4 +143,4 @@ class TestCryptogram(unittest.TestCase):
         self.assertEqual(0, len(transformed['transformed_message']))
         
         transformed = self.trf_obj.transform(message="👀", engine="alphabetic", key="nato")
-        self.assertEqual(0, len(transformed['transformed_message']))
+        self.assertEqual(1, len(transformed['transformed_message']))
