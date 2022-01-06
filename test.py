@@ -115,6 +115,9 @@ class TestCryptogram(unittest.TestCase):
         
         encrypted = self.trf_obj.transform(message=self.message+'!', engine="morse", key="encrypt")
         self.assertEqual(len(encrypted["transformed_message"]), 0)
+        
+        encrypted = self.trf_obj.transform(message=self.message, engine="morse", key="test")
+        self.assertEqual(len(encrypted["transformed_message"]), 0)
     
     def test_transform_alphabetic(self):
         
