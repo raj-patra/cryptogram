@@ -144,3 +144,10 @@ class TestCryptogram(unittest.TestCase):
         
         transformed = self.trf_obj.transform(message="👀", engine="alphabetic", key="nato")
         self.assertEqual(1, len(transformed['transformed_message']))
+        
+            
+    def test_cypher_init(self):
+        self.assertEqual(str, type(self.cyp_obj.__str__()))
+        self.assertEqual(list, type(self.cyp_obj.__engines__()))
+    
+    
