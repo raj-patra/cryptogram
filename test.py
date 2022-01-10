@@ -110,7 +110,7 @@ class TestCryptogram(unittest.TestCase):
     def test_transform_morse(self):
         
         encrypted = self.trf_obj.transform(message=self.message, engine="morse", key="encrypt")
-        decrypted = self.trf_obj .transform(message=encrypted["transformed_message"], engine=encrypted["engine"], key="decrypt")
+        decrypted = self.trf_obj.transform(message=encrypted["transformed_message"], engine=encrypted["engine"], key="decrypt")
         self.assertEqual(len(decrypted["transformed_message"].strip()), len(self.message))
         
         encrypted = self.trf_obj.transform(message=self.message+'!', engine="morse", key="encrypt")
@@ -150,4 +150,8 @@ class TestCryptogram(unittest.TestCase):
         self.assertEqual(str, type(self.cyp_obj.__str__()))
         self.assertEqual(list, type(self.cyp_obj.__engines__()))
     
-    
+    def test_cypher_caesar(self):
+        
+        encrypted = self.cyp_obj.encrypt(message=self.message, engine="caesar", key=1)
+        decrypted = self.cyp_obj.decrypt(message=encrypted["encrypted_message"], engine=encrypted["engine"], key=encrypted["key"])
+        self.assertEqual(decrypted["decrypted_message"], self.message)
