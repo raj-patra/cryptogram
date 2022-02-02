@@ -193,3 +193,7 @@ class TestCryptogram(unittest.TestCase):
         encrypted = self.cyp_obj.encrypt(message=self.message, engine="transposition", key=4)
         decrypted = self.cyp_obj.decrypt(message=encrypted["encrypted_message"], engine=encrypted["engine"], key=encrypted["key"])
         self.assertEqual(decrypted["decrypted_message"], self.message)
+        
+        encrypted = self.cyp_obj.encrypt(message=self.message, engine="transposition", key="hello")
+        decrypted = self.cyp_obj.decrypt(message=encrypted["encrypted_message"], engine=encrypted["engine"], key=encrypted["key"])
+        self.assertEqual(decrypted["decrypted_message"], self.message)
