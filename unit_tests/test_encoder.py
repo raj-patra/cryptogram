@@ -1,19 +1,15 @@
 import sys
-sys.path.insert(0, '..')
-
 import unittest
 
-from cryptogram.cypher import Cypher
 from cryptogram.encode import Encode
-from cryptogram.transform import Transform
+
+sys.path.insert(0, '..')
 
 
-class TestCryptogram(unittest.TestCase):
+class TestEncoder(unittest.TestCase):
     def setUp(self) -> None:
         self.message = "Hello World"
         self.enc_obj = Encode()
-        self.trf_obj = Transform()
-        self.cyp_obj = Cypher()
         
         return super().setUp()
     
