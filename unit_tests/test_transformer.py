@@ -1,3 +1,6 @@
+import sys
+sys.path.insert(0, '..')
+
 import unittest
 
 from cryptogram.cypher import Cypher
@@ -13,47 +16,6 @@ class TestCryptogram(unittest.TestCase):
         self.cyp_obj = Cypher()
         
         return super().setUp()
-    
-    def test_encode_init(self):
-        self.assertEqual(str, type(self.enc_obj.__str__()))
-        self.assertEqual(list, type(self.enc_obj.__engines__()))
-    
-    def test_encode_base64(self):
-        
-        encoded = self.enc_obj.encode(message=self.message, engine="base64")
-        decoded = self.enc_obj.decode(message=encoded["encoded_message"], engine="base64")
-        self.assertEqual(decoded["decoded_message"], self.message)
-    
-    def test_encode_base32(self):
-        
-        encoded = self.enc_obj.encode(message=self.message, engine="base32")
-        decoded = self.enc_obj.decode(message=encoded["encoded_message"], engine="base32")
-        self.assertEqual(decoded["decoded_message"], self.message)
-    
-    def test_encode_base16(self):
-        
-        encoded = self.enc_obj.encode(message=self.message, engine="base16")
-        decoded = self.enc_obj.decode(message=encoded["encoded_message"], engine="base16")
-        self.assertEqual(decoded["decoded_message"], self.message)
-    
-    def test_encode_ascii85(self):
-        
-        encoded = self.enc_obj.encode(message=self.message, engine="ascii85")
-        decoded = self.enc_obj.decode(message=encoded["encoded_message"], engine="ascii85")
-        self.assertEqual(decoded["decoded_message"], self.message)
-        
-    def test_encode_url(self):
-        
-        encoded = self.enc_obj.encode(message=self.message, engine="url")
-        decoded = self.enc_obj.decode(message=encoded["encoded_message"], engine="url")
-        self.assertEqual(decoded["decoded_message"], self.message)
-
-    def test_encode_base85(self):
-        
-        encoded = self.enc_obj.encode(message=self.message, engine="base85")
-        decoded = self.enc_obj.decode(message=encoded["encoded_message"], engine="base85")
-        self.assertEqual(decoded["decoded_message"], self.message)
-  
         
     def test_transform_init(self):
         self.assertEqual(str, type(self.trf_obj.__str__()))
@@ -144,56 +106,3 @@ class TestCryptogram(unittest.TestCase):
         
         transformed = self.trf_obj.transform(message="👀", engine="alphabetic", key="nato")
         self.assertEqual(1, len(transformed['transformed_message']))
-        
-            
-    def test_cypher_init(self):
-        self.assertEqual(str, type(self.cyp_obj.__str__()))
-        self.assertEqual(list, type(self.cyp_obj.__engines__()))
-    
-    def test_cypher_caesar(self):
-        
-        encrypted = self.cyp_obj.encrypt(message=self.message, engine="caesar", key=1)
-        decrypted = self.cyp_obj.decrypt(message=encrypted["encrypted_message"], engine=encrypted["engine"], key=encrypted["key"])
-        self.assertEqual(decrypted["decrypted_message"], self.message)
-        
-        encrypted = self.cyp_obj.encrypt(message=self.message, engine="caesar", key="hello")
-        decrypted = self.cyp_obj.decrypt(message=encrypted["encrypted_message"], engine=encrypted["engine"], key=encrypted["key"])
-        self.assertEqual(decrypted["decrypted_message"], self.message)
-        
-        encrypted = self.cyp_obj.encrypt(engine="caesar", key=1)
-        decrypted = self.cyp_obj.decrypt(message=encrypted["encrypted_message"], engine=encrypted["engine"], key=encrypted["key"])
-        self.assertEqual(decrypted["decrypted_message"], 'hello world')
-    
-    def test_cypher_shifting_caesar(self):
-        
-        encrypted = self.cyp_obj.encrypt(message=self.message, engine="shifting_caesar", key=1)
-        decrypted = self.cyp_obj.decrypt(message=encrypted["encrypted_message"], engine=encrypted["engine"], key=encrypted["key"])
-        self.assertEqual(decrypted["decrypted_message"], self.message)
-        
-        encrypted = self.cyp_obj.encrypt(message=self.message, engine="shifting_caesar", key="hello")
-        decrypted = self.cyp_obj.decrypt(message=encrypted["encrypted_message"], engine=encrypted["engine"], key=encrypted["key"])
-        self.assertEqual(decrypted["decrypted_message"], self.message)
-        
-        encrypted = self.cyp_obj.encrypt(engine="shifting_caesar", key=5)
-        decrypted = self.cyp_obj.decrypt(message=encrypted["encrypted_message"], engine=encrypted["engine"], key=encrypted["key"])
-        self.assertEqual(decrypted["decrypted_message"], 'hello world')
-        
-    def test_cypher_rot13(self):
-        
-        encrypted = self.cyp_obj.encrypt(message=self.message, engine="rot13")
-        decrypted = self.cyp_obj.decrypt(message=encrypted["encrypted_message"], engine=encrypted["engine"], key=encrypted["key"])
-        self.assertEqual(decrypted["decrypted_message"], self.message)       
-         
-        encrypted = self.cyp_obj.encrypt(engine="rot13")
-        decrypted = self.cyp_obj.decrypt(message=encrypted["encrypted_message"], engine=encrypted["engine"], key=encrypted["key"])
-        self.assertEqual(decrypted["decrypted_message"], 'hello world')
-        
-    def test_cypher_transposition(self):
-        
-        encrypted = self.cyp_obj.encrypt(message=self.message, engine="transposition", key=4)
-        decrypted = self.cyp_obj.decrypt(message=encrypted["encrypted_message"], engine=encrypted["engine"], key=encrypted["key"])
-        self.assertEqual(decrypted["decrypted_message"], self.message)
-        
-        encrypted = self.cyp_obj.encrypt(message=self.message, engine="transposition", key="hello")
-        decrypted = self.cyp_obj.decrypt(message=encrypted["encrypted_message"], engine=encrypted["engine"], key=encrypted["key"])
-        self.assertEqual(decrypted["decrypted_message"], self.message)
